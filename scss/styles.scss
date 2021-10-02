@@ -1,0 +1,911 @@
+* {
+    box-sizing:border-box;
+}
+html {
+    scroll-behavior: smooth;
+    background: url('../images/background-wallpaper.jpeg');
+  }
+body {
+    margin: 2.5% 10%;
+}
+h1 {
+    margin: unset;
+}
+h3 {
+    margin: unset;
+    font-family: 'Antonio', sans-serif;
+    font-size: 5vw;
+    text-align: center;
+    color: #B3504B;
+}
+h4 {
+    margin: unset;
+    font-family: 'Antonio', sans-serif;
+}
+h6 {
+    font-family: 'retro', sans-serif;
+    font-size: 2vw;
+    color: #B3504B;;
+    margin: 0;
+    overflow: hidden;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+.fa:before {
+    content: "\f138";
+}
+/* Buttons */
+/* Icon inside button */
+.fa {
+    font: normal normal normal 14px/1 FontAwesome;
+}
+
+.button-section-two {
+    font-family: 'retro', sans-serif;
+    background-color: #00D7C3;
+    width: 90%;
+    font-size: 1.25rem;
+    border-radius: 3px;
+    margin: 1rem auto 2rem 0;
+    padding: 0.5rem;
+    transition: all 0.25s;
+}
+
+.button-section-four  {
+    font-family: 'retro', sans-serif;
+    background-color: #00D7C3;
+    padding: 0.5em;
+    border-radius: 3px;
+    margin: 1rem 0 2rem 0;
+    width: 25vw;
+    font-size: 1.25rem;
+}
+.button-section-two a, .button-section-four a {
+    text-decoration: none;
+    color: #191919;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.button-section-three {
+    width: 80%;
+    font-weight: bold;
+}
+.button-section-three a{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    background-color: #FF7F78;
+    font-family: 'retro', sans-serif;
+    text-transform: uppercase;
+    color: #191919;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-bottom: 3rem;
+    padding: 0.5em;
+    transition: all 0.5s;
+}
+.card .button-container a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    font-family: 'retro', sans-serif;
+    background-color: #00D7C3;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    color: #191919;
+    margin-top: 3rem;
+}
+/* buttons ENDS */
+
+/* nav menu start */
+
+nav {
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #FFB845;
+    margin-bottom: 2rem;
+    padding: 1vh 3vh;
+}
+
+.nav-image {
+    background-image: url("../images/space.jpg");
+    width: 8vh;
+    height: 8vh;
+    background-repeat: round;
+    border: 1px solid #FFB845;
+    border-radius: 50%;
+    transition: 50s ease;
+}
+.menu {
+    width: 25vw;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1vh;
+    padding-left: 0;
+}
+.menu li a {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-decoration: none;
+    color: #B3504B;
+    font-family: 'retro', sans-serif;
+    font-size: 2vw;
+    font-weight: 800;
+}
+/* nav menu ENDS */
+
+
+/* description (section 1) starts */
+
+.name {
+    color: #00D7C3;
+    text-align: center;
+    font-family: 'Antonio', sans-serif;
+    font-size: 5vw;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-shadow: 1px 1px 0px rgba(179, 80, 75, .35), 2px 1px 0px rgba(179, 80, 75, .15);
+}
+#portfolio-title > h6, #about-title > h6, #services-title > h6, #form-title > h6 {
+    text-align: center;
+    padding-top: 0.5em;
+}
+.whoami {
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+    padding: 0 5%;
+    font-family: 'Roboto', sans-serif;
+    color: #191919;
+    margin-top: 3rem;
+}
+#watchme {
+    text-align: center;
+    font-family: 'retro', sans-serif;
+    color: #B3504B;
+    font-size: 2.75vw;
+    margin-top: -0.5rem;
+}
+#watchme span {
+    opacity: 0.75;
+    transition: 0.5s;
+    display: inline-block;
+    transform: rotate(180deg);
+}
+#watchme span:hover {
+    opacity: 1;
+    display: inline-block;
+    transition: 0.5s;
+    transform: rotate(360deg);
+}
+/* decription ENDS */
+
+/* SECOND section starts */
+#portfolio-title {
+    margin-bottom: 1rem;
+}
+#section-two {
+    display: flex;
+    margin-bottom: 3rem;
+    padding-left: 5%;
+    min-height: 40vh;
+}
+.section-two-left {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.laptop-image {
+    width: 45%;
+    height: 50%;
+    display: flex;
+    align-self: end;
+    margin-right: -2.5%;
+    transition: 1s;
+}
+
+.laptop-image:hover {
+    transform: translateX(-1em);
+    transition: 1s;
+}
+.imac-image {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-self: end;
+    margin-left: -10%;
+    transition: 1s;
+}
+.imac-image:hover {
+    transition: 1s;
+    z-index: 99;
+    transform: scale(1.1);
+}
+.iphone-image {
+    width: 20%;
+    height: 40%;
+    display: flex;
+    align-self: end;
+    margin-bottom: 1rem;
+    margin-left: -15%;
+    transition: 1s;
+}
+.iphone-image:hover {
+    transform: translateX(1em);
+    transition: 1s;
+}
+.section-two-right {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    margin-left: 7.5%;
+}
+
+.section-two-right h2 {
+    margin: unset;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vw;
+    font-weight: 400;
+    color: #191919;
+}
+/* SECOND section ENDS */
+
+/* third section MYWORK starts */
+#section-three {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #FFB845;
+    padding: 3rem 0 0 0;
+    margin-bottom: 5rem;
+}
+.image {
+    width: 30%;
+    margin: 1rem auto;
+    padding: 0;
+    border-radius: 1%;
+    background-repeat: round;
+}
+#philjackson {
+    background-image: url('../images/philjackson.png');
+}
+#bang {
+    background-image: url('../images/bang.png');
+}
+#ownstyle {
+    background-image: url('../images/ownstyle.png');
+}
+#zarzaparrilla {
+    background-image: url('../images/zarzaparrilla.png');
+}
+#lacueva {
+    background-image: url('../images/lacueva.png');
+}
+#oestevaquero {
+    background-image: url('../images/oestevaquero.png');
+}
+.image__img {
+    height: 12vh;
+    border: 2px solid #FF7F78;
+    border-radius: 50%;
+}
+.image__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #FFB845;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    padding: 0 0.25rem;
+}
+
+.image__description {
+    color: #B38439;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+}
+.image__overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    font-family: 'retro';
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+.image__overlay > * {
+    transform: translateY(-15px);
+    transition: transform 0.75s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(15px);
+}
+/* third section MYWORK ENDS */
+
+/* section four ABOUT ME starts */
+#about-title {
+    border-bottom: 1px solid #FFB845;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+#section-four {
+    margin-bottom: 5rem;
+}
+.alterego-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 0 25%;
+}
+.space {
+    border: 1px solid #FF7CB0;
+    width: 50%;
+    filter: drop-shadow(2px 4px 6px #b3504b);
+}
+.alterego-hover {
+    position: absolute;
+    top: 0%;
+    left: 37.5%;
+    opacity: 0;
+    transition: opacity 2s ease-out;
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+    width: fit-content;
+}
+.alterego-hover:hover {
+    position: absolute;
+    top: 0%;
+    left: 37.5%;
+    opacity: 1;
+    transition: opacity 2s ease-out;
+    filter: drop-shadow(2px 4px 6px #000);
+}
+.portfolio-card h4 {
+    font-family: 'retro', sans-serif;
+    font-size: 3vw;
+    color: #42B3AB;
+}
+/* section four ABOUT ME ENDS */
+
+/* section five SERVICES starts */
+
+#services-title {
+    border-bottom: 1px solid #FFB845;
+    padding-bottom: 1rem;
+}
+#section-five {
+    display: flex;
+    margin-bottom: 5rem;
+    padding: 3rem 0 0 0;
+}
+.card {
+    width: 30%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(66, 179, 171, 0.15);
+    margin: 1rem auto;
+    padding: 3%;
+    border-radius: 1%;
+}
+.card-image {
+    height: 10vh;
+    margin: 0.5rem auto 1rem auto;
+    display: flex;
+    border-radius: 50%;
+    border: 1px solid #b3504b;
+}
+.card h4 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #42B3AB;
+    min-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+.card p {
+    color: #191919;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+}
+
+/* section five SERVICES ENDS */
+
+/* section FORM STARTS */
+
+#form-title {
+    border-bottom: 1px solid #FFB845;
+    margin-bottom: 5rem;
+    padding-bottom: 1rem;
+
+}
+fieldset {
+    background: #FFF7E8;
+    border: 1px solid #dad5cb;
+    color: #764A50;
+    box-shadow: rgba(189, 189, 202, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    padding-bottom: 2rem;
+    border-radius: 3px;
+}
+legend {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+label p {
+    font-family: 'retro', sans-serif;
+    margin-left: 10%;
+    
+}
+input[type="text"], input[type="email"], textarea {
+    padding: 1rem;
+    width: 80%;
+    text-align: center;
+    margin: 0px 10%;
+    border: 1px solid #dad5cb;
+    border-radius: 3px;
+}
+.checkbox-label {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 10px 0 10px 10%;
+}
+input[type="checkbox"] {
+    /* to apply checkbox style */
+    display:none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+}
+.checkbox-label:before {
+    display: flex;
+    content: ' ';
+    height: 20px;
+    width: 20px;
+    border: solid 1px #dad5cb;
+    background: #fff;
+    margin-right: 10px;
+}
+.checkbox-label:after {
+    height: 5px;
+    content: ' ';
+    display: flex;
+    position: absolute;
+    top: 6px;
+    width: 12px;
+    left: 4px;
+    border-bottom: solid 2px #42B3AB;
+    border-left: solid 2px #42B3AB;
+    background: none;
+    transform: rotate(-45deg) scale(0);
+    transition: transform .1s ease, opacity .1s ease;
+    transform-origin: center center;
+}
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label:after {
+    opacity: 1;
+    transform: rotate(
+-45deg) scale(.8);
+}
+
+form > p:nth-child(4), form > p:nth-child(5) {
+    padding: 0 10%;
+    font-size: 0.75rem;
+}
+textarea {
+    font-family: 'Roboto', sans-serif;
+}
+#privacy-policy {
+    display: flex;
+    align-items: center;
+}
+input[type="submit"] {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    font-family: 'retro', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFF7E8;
+    background-color: #42B3AB;
+    padding: 0.5rem;
+    border-radius: 3px;
+    border: 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    text-shadow: 1px 1px 1px rgba(	0, 215, 195, 1);
+}
+input:focus-visible, textarea:focus-visible {
+    box-shadow: 0 0 0 1pt #f7e9cf;
+    outline: none;
+}
+input, input:focus {
+    outline: none;
+    transition: .1s;
+}
+textarea:focus {
+    outline: none;
+}
+/* section FORM ENDS */
+
+/* FOOTER starts */
+
+footer {
+    padding: 1rem 0 0 0;
+}
+.back-to-top {
+    background-color: transparent;
+    display: inline-block;
+    margin-left: -6px;
+    margin-top: 30px;
+    outline: 0 !important;
+    color: white;
+    transition: 0.5s;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 0px 40px 60px 40px;
+    margin-top: 22px;
+    border-color: transparent transparent #B3504B transparent;
+}
+.rrss {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 25%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 4vw;
+    border-top: 1px solid #B3504B;
+}
+.rrss > a {
+    color: #B3504B;
+}
+.fa-ghost, .fa-github, .fa-facebook, .fa-spotify {
+    transition: 0.25s;
+}
+.copywright {
+    text-align: center;
+    font-size: 12px;
+}
+.copywright p {
+    margin-top: 0;
+    color: #B3504B;
+}
+#elias {
+    color: #FF7F78;
+}
+/* FOOTER ENDS */
+
+                            /* HOVER section starts */
+/* nav hover */
+.nav-image:hover {
+    background-position-x: 600vh;
+    transition: 125s ease;
+    cursor: none;
+}
+.menu li a:hover {
+    color: #FF7F78;
+}
+/* boton section two(go to portfolio) */
+.button-section-two:hover {
+    box-shadow: 0 0 1px 0 #00d7c3 inset, 0 0 4px 1px #00d7c3;
+    letter-spacing: 2px;
+    text-shadow: 1px 3px 1px rgba(	0, 215, 195, 1);
+    transition: all 0.25s;
+    color: white;
+}
+.button-section-two a:hover, .button-section-four a:hover, .card .button-container a:hover {
+    color: white;
+}
+.button-section-two a:hover, .button-section-four a:hover, .card .button-container a:hover {
+    color: white;
+}
+/* portfolio section hover */
+.button-section-three a:hover {
+    box-shadow: 0 0 1px 0 #FF7F78 inset, 0 0 4px 1px #FF7F78;
+    letter-spacing: 1px;
+    text-shadow: 1px 3px 1px rgb(255, 127, 120);
+    transition: all 0.25s;
+}
+
+/* form hover */
+input[type="submit"]:hover {
+    box-shadow: 0 0 1px 0 #00d7c3 inset, 0 0 4px 1px #00d7c3;
+    border: 1px solid #00d7c3;
+    letter-spacing: 2px;
+    text-shadow: 1px 3px 1px rgba(	0, 215, 195, 1);
+}
+/* footer hover */
+.back-to-top:hover {
+    transform: scaleY(1.25);
+    transition: 0.5s;
+}
+.fa-ghost:hover, .fa-github:hover, .fa-facebook:hover, .fa-spotify:hover {
+    color: #FF7F78;
+    transform: scale(1.15);
+    transition: 0.25s;
+}
+#elias:hover {
+    color: #FFB845;
+}
+                        /* HOVER section ENDS */
+
+                /* ANIMATION (hover included) section starts */
+.animation-one {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    animation: move-one 3s 1 ease-in-out;
+    transition: all 1000ms ease-in-out;
+    height: 0;
+}
+.old-text,
+.new-text {
+    display: block;
+    overflow: hidden;
+    transition: all 1000ms ease-in-out;
+    width: fit-content;
+}
+.old-text {
+height: auto;
+opacity: 1;
+width: fit-content;
+}
+.new-text {
+color: #FF7F78;
+height: 0;
+opacity: 0;
+width: 0;
+}
+.animation-one:hover .old-text {
+height: 0px;
+opacity: 0;
+width: 0px;
+}
+.animation-one:hover .new-text {
+height: auto;
+opacity: 1;
+width: fit-content;
+}
+@keyframes move-one {
+    0%   { opacity: 0; top: -7vh; left:0%; }
+    10%  { opacity: 0.1; top: -6vh; left: 0%; }
+    20%  { opacity: 0.2; top: -5vh; left: 0%; }
+    30%  { opacity: 0.3; top: -4vh; left: 0%; }
+    40%  { opacity: 0.4; top: -3vh; left: 0%; }
+    50%  { opacity: 0.5; top: -2vh; left: 0%; }
+    60%  { opacity: 0.6; top: -1vh; left: 0%; }
+    70%  { opacity: 0.7; top: 0vh; left: 0%; }
+    80%  { opacity: 0.8; top: 0vh; left: 0%; }
+    90%  { opacity: 0.9; top: 0vh; left: 0%; }
+    100%  { opacity: 1; top: 0vh; left: 0%; }
+}
+                        /* ANIMATION section ends */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+    nav {
+        padding: 1vh 1vh;
+    }
+    .menu {
+        width: 50vw;
+    }
+    .menu li a {
+        font-size: 4vw;
+        margin: 0 2.5%;
+    }
+    .name {
+        font-size: 8vw;
+    }
+    h6 {
+        font-size: 4vw;
+    }
+    .whoami {
+        font-size: 4vw;
+    }
+    #watchme {
+        font-size: 6vw;
+        margin-top: 1.5rem;
+    }
+    #section-two {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .section-two-left {
+        width: 95%;
+    }
+    .section-two-right  {
+        width: 80%;
+        margin-top: 1rem;
+        margin-left: 10%;
+    }
+    .section-two-right h2 {
+        font-size: 4vw;
+    }
+    .image {
+        background-repeat: round;
+        width: 70vw;
+        height: 45vw;
+    }
+    #section-three {
+        margin-bottom: 3rem;
+    }
+    #section-four {
+        margin-bottom: 3rem;
+    }
+    h3 {
+        font-size: 8vw;
+    }
+    .portfolio-card {
+        padding: 0 1rem;
+    }
+    .portfolio-card p{
+        padding: 1rem 0;
+    }
+    .portfolio-card h4 {
+        font-size: 5vw;
+    }
+    .button-section-four {
+        width: 60vw;
+        margin-bottom: 4rem;
+    }
+    #section-five {
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+    .card {
+        width: 90%;
+        padding: 7.5%;
+    }
+    #form-title {
+        margin-bottom: 3rem;
+    }
+    legend {
+        font-size: 15px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .image {
+        background-repeat: round;
+        min-width: 37vw;
+    }
+    .card {
+        width: 32%;
+    }
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        margin: 1% 10%;
+    }
+    .name {
+        font-size: calc(4.5vw - 40%);
+    }
+    .whoami {
+        font-size: calc(2.25vw - 30%);
+    }
+    #watchme {
+        font-size: calc(2vw - 40%);
+    }
+    .section-two {
+        margin-top: 2rem;
+    }
+    .section-two-right h2 {
+        font-size: calc(2.5vw - 40%);
+    }
+    .section-two-left {
+        width: 75%;
+    }
+    .laptop-image {
+        width: 50%;
+    }
+    /* portfolio images */
+    .image {
+        min-width: auto;
+    }
+    .portfolio-card h4 {
+        font-size: calc(3vw - 40%);
+    }
+    .portfolio-card p {
+        font-size: 1.25rem;
+    }
+    .card {
+        padding: 3% 5%;
+        width: 30%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1023px and up) */
+@media only screen and (min-width: 1023px) {
+    .whoami  {
+        padding: 0 12.5%;
+    }
+    .image {
+        min-width: auto;
+    }
+    #section-two {
+        min-width: 50vh;
+    }
+    #section-four {
+        padding: 0 2.5%;
+    }
+    /* section FOUR fantasma a izquierda */
+    #about-title  {
+        margin-bottom: 4rem;
+    }
+    .alterego-wrapper {
+        width: 35%;
+        float: left;
+        padding: 0;
+        display: block;
+        margin-left: 5%;
+        margin-top: 2.5%
+    }
+    .alterego-hover, .alterego-hover:hover {
+        left: 0%;
+        top: -1px;
+        width: 50%;
+        height: 99.5%;
+    }
+    .portfolio-card {
+        margin: 2.5rem 0;
+    }
+    #section-four > div:nth-child(2) {
+        width: 60% !important;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    fieldset {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
