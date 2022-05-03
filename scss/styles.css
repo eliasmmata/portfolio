@@ -801,14 +801,14 @@ footer {
 .rrss {
   width: 100%;
   margin: 0 auto;
-  padding: 1rem 25%;
+  padding: 1.5rem 2.5%;
+  font-size: 7vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  font-size: 4vw;
   border-top: 1px solid #B3504B;
 }
 
@@ -1169,6 +1169,10 @@ input[type="submit"]:hover {
   }
   .card {
     width: 32%;
+  }
+  .rrss {
+    padding: 1.5rem 25%;
+    font-size: 2.5vw;
   }
 }
 
