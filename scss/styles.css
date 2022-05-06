@@ -965,7 +965,7 @@ input[type="submit"]:hover, #submit-button:hover {
 }
 
 /* HOVER section ENDS */
-/* ANIMATION (hover included) section starts */
+/* ANIMATION (hover included & COLOR CHANGE TEXT) section starts */
 .animation-one {
   position: relative;
   display: block;
@@ -1135,6 +1135,24 @@ input[type="submit"]:hover, #submit-button:hover {
     top: 0vh;
     left: 0%;
   }
+}
+
+.color-change  {
+  animation: color-change 10s ease-in-out infinite;
+}
+
+@keyframes color-change {
+  0% { color: #000;opacity:0 }
+  10% { color: #000; }
+  20% { color: #000;opacity:1}
+  30% { color: #FF7F78; }
+  40% { color: #FF7F78; }
+  50% { color: #FF7F78; }
+  60% { color: #FF7F78;; }
+  70% { color: #FFB845; }
+  80% { color: #FFB845; }
+  90% { color: #FFB845; }
+  100% { color: #fff; }
 }
 
 /* ANIMATION section ends */
