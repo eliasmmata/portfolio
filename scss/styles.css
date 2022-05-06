@@ -379,8 +379,31 @@ nav {
 }
 
 /* SECOND section ENDS */
+
+/* section FRONTEND starts */
+#weteachfrontend {
+  background: #fff;
+  background-image: url("../images/wtf.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: center;
+  box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 7px 0px;
+}
+#cardsproject {
+  background-image: url("../images/cards-project.png");
+  box-shadow: rgb(81,156,152) 0px 1px 7px 0px;
+}
+#slidesproject {
+  background-image: url("../images/slides-demo.png");
+  box-shadow: rgb(81,156,152) 0px 1px 7px 0px;
+}
+#weteachfrontend:hover, #cardsproject:hover, #slidesproject:hover {
+box-shadow: none;
+}
+/* FRONTEND section ENDS */
+
 /* third section MYWORK starts */
-#section-three {
+.section-three-front, .section-three-work {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,6 +428,9 @@ nav {
 
 #bang {
   background-image: url("../images/bang.png");
+}
+#vesania {
+  background-image: url("../images/vesania.png");
 }
 
 #ownstyle {
@@ -462,6 +488,7 @@ nav {
 .image__overlay {
   width: 100%;
   height: 100%;
+  border-radius: 3px;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   display: -webkit-box;
