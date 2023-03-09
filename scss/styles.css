@@ -380,6 +380,29 @@ nav {
 
 /* SECOND section ENDS */
 
+/* section FULLSTACK starts */
+
+/* FULLSTACK section ENDS */
+#velezleaksproject {
+  background-image: url("../images/velezleaks.png");
+  background-repeat: no-repeat;
+  box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
+  background-size: 85%;
+  background-color: white;
+  background-position: center;
+}
+#appproject {
+  background-image: url("../images/store-logo.png");
+  background-repeat: no-repeat;
+  box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
+  background-size: 85%;
+  background-color: white;
+  background-position: center;
+}
+#editoroddsproject {
+  background-image: url("../images/editor-odds.png");
+  box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
+}
 /* section FRONTEND starts */
 #weteachfrontend {
   background: #fff;
@@ -1273,7 +1296,7 @@ input[type="submit"]:hover, #submit-button:hover {
     margin-top: 2rem;
   }
   .section-two-right h2 {
-    font-size: calc(2.5vw - 40%);
+    font-size: calc(2.5vw - 70%);
   }
   .section-two-left {
     width: 75%;
