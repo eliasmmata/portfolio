@@ -407,6 +407,14 @@ nav {
   background-color: white;
   background-position: center;
 }
+#pitayafenicia {
+  background-image: url("../images/pitayafenicia.png");
+  background-repeat: no-repeat;
+  box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
+  background-size: cover;
+  background-color: white;
+  background-position: center;
+}
 #editoroddsproject {
   background-image: url("../images/editor-odds.png");
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
