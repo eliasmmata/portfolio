@@ -146,11 +146,11 @@ input:focus:-moz-placeholder{
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   font-family: 'retro', sans-serif;
   background-color: #00D7C3;
   text-decoration: none;
@@ -158,6 +158,10 @@ input:focus:-moz-placeholder{
   border-radius: 3px;
   color: #191919;
   margin-top: 3rem;
+}
+
+.button-container {
+    margin-top: auto; /* Align to the baseline */
 }
 
 /* buttons ENDS */
@@ -225,9 +229,10 @@ nav {
   text-shadow: 1px 1px 0px rgba(179, 80, 75, 0.35), 2px 1px 0px rgba(179, 80, 75, 0.15);
 }
 
-#portfolio-title > h6, #about-title > h6, #services-title > h6, #form-title > h6 {
+#last-projects > h6, #work-section > h6, #last-junior-projects > h6, #about-me > h6, #services > h6, #contact-form > h6 {
   text-align: center;
   padding-top: 0.5em;
+  padding-bottom: 0.25em;
 }
 
 .whoami {
@@ -664,10 +669,12 @@ box-shadow: none;
   width: 30%;
   background: rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: 0 5px 15px rgba(66, 179, 171, 0.15);
-          box-shadow: 0 5px 15px rgba(66, 179, 171, 0.15);
+  box-shadow: 0 5px 15px rgba(66, 179, 171, 0.15);
   margin: 1rem auto;
   padding: 3%;
   border-radius: 1%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-image {
@@ -1221,6 +1228,11 @@ input[type="submit"]:hover, #submit-button:hover {
   h6 {
     font-size: 4vw;
   }
+  #last-projects > h6, #work-section > h6, #last-junior-projects > h6, #about-me > h6, #services > h6, #contact-form > h6 {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
   .whoami {
     font-size: 4vw;
   }
@@ -1248,6 +1260,9 @@ input[type="submit"]:hover, #submit-button:hover {
     width: 70vw;
     height: 45vw;
   }
+  .image__img {
+    height: 10vh;
+  }
   #section-three {
     margin-bottom: 3rem;
   }
@@ -1258,25 +1273,26 @@ input[type="submit"]:hover, #submit-button:hover {
     font-size: 8vw;
   }
   .portfolio-card {
-    padding: 0 1rem;
+    padding: 0 0.25rem;
   }
   .portfolio-card p {
-    padding: 1rem 0;
+    padding: 0rem 0 0.25rem;
   }
   .portfolio-card h4 {
     font-size: 5vw;
   }
   .button-section-four {
     width: 60vw;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
   }
   #section-five {
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     margin-bottom: 3rem;
+    padding: 0;
   }
   .card {
-    width: 90%;
+    width: 100%;
     padding: 7.5%;
   }
   #form-title {
