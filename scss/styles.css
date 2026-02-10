@@ -5,7 +5,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: url("../images/background-wallpaper.jpeg");
+  background: url("../images/backgrounds/background-wallpaper.jpeg");
 }
 
 body {
@@ -220,7 +220,7 @@ nav {
 }
 
 .nav-image {
-  background-image: url("../images/space.jpg");
+  background-image: url("../images/personal/space.jpg");
   width: 8vh;
   height: 8vh;
   background-repeat: round;
@@ -438,7 +438,7 @@ nav {
 
 /* FULLSTACK section ENDS */
 #fedesaproject {
-  background-image: url("../images/fedesa.png");
+  background-image: url("../images/works/fedesa.png");
   background-repeat: no-repeat;
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
   background-size: cover;
@@ -447,7 +447,7 @@ nav {
 }
 
 #velezleaksproject {
-  background-image: url("../images/velezleaks.png");
+  background-image: url("../images/works/velezleaks.png");
   background-repeat: no-repeat;
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
   background-size: 85%;
@@ -456,7 +456,7 @@ nav {
 }
 
 #pitayafenicia {
-  background-image: url("../images/pitayafenicia.png");
+  background-image: url("../images/works/pitayafenicia.png");
   background-repeat: no-repeat;
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
   background-size: cover;
@@ -465,7 +465,7 @@ nav {
 }
 
 #appproject {
-  background-image: url("../images/store-logo.png");
+  background-image: url("../images/works/store-logo.png");
   background-repeat: no-repeat;
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
   background-size: 85%;
@@ -474,19 +474,19 @@ nav {
 }
 
 #editoroddsproject {
-  background-image: url("../images/editor-odds.png");
+  background-image: url("../images/works/editor-odds.png");
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
 }
 
 #filterstore {
-  background-image: url("../images/filterstore.png");
+  background-image: url("../images/works/filterstore.png");
   box-shadow: rgba(42, 28, 61, 0.7) 0px 1px 5px 0px;
 }
 
 /* section FRONTEND starts */
 #weteachfrontend {
   background: #fff;
-  background-image: url("../images/wtf.png");
+  background-image: url("../images/works/wtf.png");
   background-repeat: no-repeat;
   background-size: 75%;
   background-position: center;
@@ -494,12 +494,12 @@ nav {
 }
 
 #cardsproject {
-  background-image: url("../images/cards-project.png");
+  background-image: url("../images/works/cards-project.png");
   box-shadow: rgb(81, 156, 152) 0px 1px 7px 0px;
 }
 
 #slidesproject {
-  background-image: url("../images/slides-demo.png");
+  background-image: url("../images/works/slides-demo.png");
   box-shadow: rgb(81, 156, 152) 0px 1px 7px 0px;
 }
 
@@ -533,35 +533,35 @@ nav {
 }
 
 #philjackson {
-  background-image: url("../images/philjackson.png");
+  background-image: url("../images/works/philjackson.png");
 }
 
 #manuelburgos {
-  background-image: url("../images/manuelburgos.png");
+  background-image: url("../images/works/manuelburgos.png");
 }
 
 #bang {
-  background-image: url("../images/bang.png");
+  background-image: url("../images/works/bang.png");
 }
 
 #vesania {
-  background-image: url("../images/vesania.png");
+  background-image: url("../images/works/vesania.png");
 }
 
 #ownstyle {
-  background-image: url("../images/ownstyle.png");
+  background-image: url("../images/works/ownstyle.png");
 }
 
 #zarzaparrilla {
-  background-image: url("../images/zarzaparrilla.png");
+  background-image: url("../images/works/zarzaparrilla.png");
 }
 
 #lacueva {
-  background-image: url("../images/lacueva.png");
+  background-image: url("../images/works/lacueva.png");
 }
 
 #oestevaquero {
-  background-image: url("../images/oestevaquero.png");
+  background-image: url("../images/works/oestevaquero.png");
 }
 
 .image__img {
@@ -582,13 +582,13 @@ nav {
   align-items: center;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  color: #f979d1;
+  color: #00d7c3;
   text-align: center;
   text-transform: uppercase;
   margin-top: 0.5rem;
   padding: 0 0.25rem;
   font-weight: 900;
-  text-shadow: 1px 1px rgba(102, 0, 76, 1);
+  text-shadow: 1px 1px #000000;
 }
 
 .image__description {
@@ -713,6 +713,7 @@ nav {
   font-size: 3vw;
   color: #00d7c3;
   text-transform: uppercase;
+  text-shadow: 0.5px 0.5px #000;
 }
 
 /* section four ABOUT ME ENDS */
@@ -1108,10 +1109,7 @@ input[type="submit"]:hover,
   transition: 0.5s;
 }
 
-.fa-ghost:hover,
-.fa-github:hover,
-.fa-facebook:hover,
-.fa-spotify:hover {
+.rrss>a:hover {
   color: #f979d1;
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
@@ -1510,7 +1508,7 @@ input[type="submit"]:hover,
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border-top: 1px solid rgb(249, 121, 209);
+    border-top: 1px solid #f979d1;
     padding: 3rem 0 0 0;
   }
 
@@ -1608,8 +1606,7 @@ input[type="submit"]:hover,
   }
 
   #about-cards-container {
-    border-top: 1px solid rgb(249, 121, 209);
-
+    border-top: 1px solid #f979d1;
   }
 
   .space {
@@ -2084,6 +2081,7 @@ button.close {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: repeat(4, 1fr);
+  gap: 6px 0;
 }
 
 .tech-item {

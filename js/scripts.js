@@ -1,4 +1,4 @@
-import { fullStackProjects, wordpressProjects, stack, aboutMeCards } from '../data/data.js';
+import { fullStackProjects, wordpressProjects, juniorProjects, stack, aboutMeCards } from '../data/data.js';
 
 // ============================================
 // RENDERING FUNCTIONS
@@ -13,7 +13,7 @@ function renderProjects(projects, containerId) {
     container.innerHTML = projects.map(project => `
         <div class="image" id="${project.id}">
             <div class="image__overlay image__overlay--blur">
-                <img class="image__img" src="../images/space.jpg" alt="icon">
+                <img class="image__img" src="../images/personal/space.jpg" alt="icon">
                 <div class="image__title">${project.title}</div>
                 <p class="image__description">${project.description}</p>
                 <div class="button-section-three">
@@ -36,7 +36,7 @@ function renderStack(stack, containerId) {
 
     container.innerHTML = stack.map(service => `
         <div class="card">
-            <img class="card-image" src="../images/space.jpg" alt="icon">
+            <img class="card-image" src="../images/personal/space.jpg" alt="icon">
             <h4>${service.title}</h4>
             ${service.description.map(desc => `<p>${desc}</p>`).join('')}
             <div class="button-container">
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Render all sections
     renderProjects(fullStackProjects, 'fullstack-projects-container');
     renderProjects(wordpressProjects, 'wordpress-projects-container');
+    // renderProjects(juniorProjects, 'junior-projects-container');
     renderStack(stack, 'stack-container');
     renderAboutCards(aboutMeCards, 'about-cards-container');
 });

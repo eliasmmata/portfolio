@@ -169,6 +169,33 @@ export const stack = [
 ];
 
 // ============================================
+// DATA ARRAYS - Junior Projects (Not active)
+// ============================================
+export const juniorProjects = [
+    {
+        id: 'slidesproject',
+        title: 'Slides Design Demo',
+        description: 'React & Ownl Carousel',
+        url: 'http://carousel-owl-react.herokuapp.com/',
+        buttonText: 'Go to page'
+    },
+    {
+        id: 'weteachfrontend',
+        title: 'We Teach Frontend',
+        description: 'NextJS, Tailwind, MongoDB',
+        url: 'https://weteachfrontend.com/',
+        buttonText: 'Go to page'
+    },
+    {
+        id: 'cardsproject',
+        title: 'Fetch, Crud, Posts Demo',
+        description: 'React & Typescript',
+        url: 'https://cards-project-react.netlify.app/',
+        buttonText: 'Go to demo'
+    }
+];
+
+// ============================================
 // DATA ARRAYS - About Me Cards
 // ============================================
 export const aboutMeCards = [
