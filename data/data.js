@@ -218,3 +218,68 @@ export const aboutMeCards = [
         buttonUrl: 'https://prezi.com/view/VGAlVGrVltMb5SGFs90O/'
     }
 ];
+// ============================================
+// DATA ARRAYS - Current Stack
+// ============================================
+export const currentStack = [
+    {
+        src: '../images/logos/javascript-logo.png',
+        alt: 'JavaScript Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/node-logo.png',
+        alt: 'Node.js Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/react-logo.png',
+        alt: 'React Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/nextjs-logo.png',
+        alt: 'Next.js Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/php-logo.png',
+        alt: 'PHP Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/mysql-logo.png',
+        alt: 'MySQL Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/docker-logo.png',
+        alt: 'Docker Logo',
+        imgClass: 'tech-logo-docker'
+    },
+    {
+        src: '../images/logos/git-logo.png',
+        alt: 'Git Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/typescript-logo.png',
+        alt: 'TypeScript Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/css-logo.png',
+        alt: 'CSS Logo',
+        imgClass: 'tech-logo-css'
+    },
+    {
+        src: '../images/logos/tailwind-logo.png',
+        alt: 'Tailwind CSS Logo',
+        imgClass: 'tech-logo'
+    },
+    {
+        src: '../images/logos/pm2-logo.png',
+        alt: 'PM2 Logo',
+        imgClass: 'tech-logo-css'
+    }
+];

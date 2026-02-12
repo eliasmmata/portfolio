@@ -1,8 +1,24 @@
-import { fullStackProjects, wordpressProjects, juniorProjects, stack, aboutMeCards } from '../data/data.js';
+import { fullStackProjects, wordpressProjects, juniorProjects, stack, aboutMeCards, currentStack } from '../data/data.js';
 
 // ============================================
 // RENDERING FUNCTIONS
 // ============================================
+
+/**
+ * Render current stack items
+ */
+function renderCurrentStack(stackData, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = stackData.map(item => `
+        <div class="tech-item">
+            <img class="${item.imgClass}" src="${item.src}" alt="${item.alt}">
+        </div>
+    `).join('');
+}
+
+
 /**
  * Render project cards (for Full Stack and WordPress sections)
  */
@@ -105,4 +121,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // renderProjects(juniorProjects, 'junior-projects-container');
     renderStack(stack, 'stack-container');
     renderAboutCards(aboutMeCards, 'about-cards-container');
+    renderCurrentStack(currentStack, 'current-stack-container');
 });
