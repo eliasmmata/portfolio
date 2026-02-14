@@ -7,7 +7,8 @@ import {
   currentStack,
 } from "../data/data.js";
 
-const JOYSTICK_ICON = `
+const JOYSTICK_ICON_PATH = "../assets/svgs/joystick.svg";
+const JOYSTICK_ICON_FALLBACK = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30" width="20" height="30" fill="none" style="image-rendering: pixelated;">
     <rect x="0" y="24" width="20" height="6" fill="#66004c"/>
     <rect x="0" y="24" width="20" height="1" fill="#8a3f73"/>
@@ -28,6 +29,26 @@ const JOYSTICK_ICON = `
     </g>
   </svg>
 `;
+let joystickIconMarkup = JOYSTICK_ICON_FALLBACK;
+
+async function loadJoystickIcon() {
+  try {
+    const response = await fetch(JOYSTICK_ICON_PATH);
+    if (!response.ok) {
+      throw new Error(`Failed to load joystick SVG: ${response.status}`);
+    }
+    joystickIconMarkup = await response.text();
+  } catch (error) {
+    console.warn("Using fallback joystick SVG markup.", error);
+    joystickIconMarkup = JOYSTICK_ICON_FALLBACK;
+  }
+}
+
+function injectStaticJoystickIcons() {
+  document.querySelectorAll("[data-joystick-icon]").forEach((slot) => {
+    slot.innerHTML = joystickIconMarkup;
+  });
+}
 
 // ============================================
 // RENDERING FUNCTIONS
@@ -72,7 +93,7 @@ function renderProjects(projects, containerId) {
                     onclick="window.open('${project.url}', '_blank', 'noopener')"
                 >
                     <span>${project.buttonText}</span>
-                    ${JOYSTICK_ICON}
+                    ${joystickIconMarkup}
                 </button>
             </div>
         </div>
@@ -98,7 +119,7 @@ function renderStack(stack, containerId) {
             <div class="button-container">
                 <button type="button" class="card-button" onclick="window.location.href='${service.buttonUrl}'">
                     <span>${service.buttonText}</span>
-                    ${JOYSTICK_ICON}
+                    ${joystickIconMarkup}
                 </button>
             </div>
         </div>
@@ -130,7 +151,7 @@ function renderAboutCards(cards, containerId) {
                 onclick="window.open('${card.buttonUrl}', '_blank', 'noopener')"
             >
                 <span>${card.buttonText}</span>
-                ${JOYSTICK_ICON}
+                ${joystickIconMarkup}
             </button>
         </div>
     `;
@@ -163,7 +184,7 @@ function formInputNotEmpty() {
 // ============================================
 // INITIALIZATION
 // ============================================
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const burgerButton = document.querySelector(".retro-burger");
   const mobileMenu = document.getElementById("main-menu");
 
@@ -183,6 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Set current year
   document.getElementById("year").innerHTML = new Date().getFullYear();
+  await loadJoystickIcon();
+  injectStaticJoystickIcons();
 
   // Render all sections
   renderProjects(fullStackProjects, "fullstack-projects-container");

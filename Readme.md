@@ -37,10 +37,6 @@ Sistema tipográfico responsive basado en `rem + clamp()`.
 
 ## Tasks
 
-- ✅ Hover de cards que suba a más del border overflow el space invader para poder hacer botón más grande
-
-- ✅ Burger menu retro (could be improved)
-
 - ✅ Typography regularized with `rem + clamp()` variables (`--fs-*`).
 
 - Simplyfy styles and classes better understanding names.

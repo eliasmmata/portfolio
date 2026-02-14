@@ -63,38 +63,7 @@
                 </div>
                 <button type="button" class="button-section-two" onclick="location.href='#last-projects'">
                     <span>View Portfolio</span>
-                    <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        viewBox="0 0 20 30" 
-                        width="20" 
-                        height="30" 
-                        fill="none" 
-                        style="image-rendering: pixelated;"
-                    >
-                        <rect x="0" y="24" width="20" height="6" fill="#66004c"/>
-                        <rect x="0" y="24" width="20" height="1" fill="#8a3f73"/>
-                        <rect x="0" y="28" width="20" height="2" fill="#3f002f"/>
-                        
-                        <rect x="0" y="12" width="20" height="12" fill="#e2cfe2"/>
-                        <rect x="0" y="23" width="20" height="1" fill="#f0e2f0"/>
-
-                        <rect x="4" y="19" width="12" height="2" fill="#5a003f"/>
-                        <rect x="6" y="17" width="8" height="2" fill="#5a003f"/>
-                        <rect x="8" y="16" width="4" height="1" fill="#5a003f"/>
-
-                        <g class="joystick-handle">
-                            <rect x="9" y="9" width="2" height="7" fill="#7f2b68"/>
-                            <rect x="9" y="10" width="1" height="6" fill="#bf97bf"/>
-
-                            <rect x="7" y="6" width="6" height="3" fill="#5a003f"/>
-                            <rect x="8" y="9" width="4" height="1" fill="#5a003f"/>
-                            
-                            <rect x="7" y="3" width="6" height="3" fill="#7a2f63"/>
-                            <rect x="8" y="2" width="4" height="1" fill="#7a2f63"/>
-                            
-                            <rect x="10" y="3" width="2" height="2" fill="#d8bfd8"/>
-                        </g>
-                    </svg>
+                    <span data-joystick-icon aria-hidden="true"></span>
                 </button>
             </div>
         </section>
@@ -125,9 +94,11 @@
             <h6>Born in the 80s, raised in the 90s, living 21st Century full</h6>
         </div>
         <section id="section-four">
+        <div class="portfolio-card">
             <div class="alterego-wrapper">
                 <img class="space" src="../images/personal/space.jpg" alt="normal" />
                 <img class="alterego-hover" src="../images/personal/portfolioPic.jpg" alt="hover" />
+            </div>
             </div>
             <div id="about-cards-container">
                 <!-- About me cards will be rendered here by JavaScript -->
@@ -166,9 +137,7 @@
                             placeholder="Do not be shy my preeecious...&#10;You can also chat with me by clicking on the footer ghost : )"></textarea>
                     </label>
                     <p>* Privacy </p>
-                    <p>By using this form you agree with the storage and handling of your data by this website. Please
-                        read
-                        our Privacy Policy for more information on how we handle your data.</p>
+                    <p>By using this form you agree with the storage and handling of your data by this website. <br class="br-desktop" /> Please read our Privacy Policy for more information on how we handle your data.</p>
                     <div class="checkbox-wrapper">
                         <input onclick="formInputNotEmpty()" required type="checkbox" name="privacy policy"
                             id="privacy">
