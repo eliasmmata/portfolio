@@ -12,17 +12,38 @@ https://mycolor.space/?hex=%23F979D1&sub=1
 #66004c rgb(102, 0, 76)
 #d8bfd8 rgb(216, 191, 216)
 
+## Typography scale (`scss/styles.css`)
+
+Sistema tipográfico responsive basado en `rem + clamp()`.
+
+| Variable          | Uso recomendado                                     |
+| ----------------- | --------------------------------------------------- |
+| `--fs-display-xl` | Hero principal (`.name`)                            |
+| `--fs-display-lg` | Títulos de sección (`h3`)                           |
+| `--fs-heading-lg` | Subtítulos grandes (`h2`, títulos destacados)       |
+| `--fs-heading-md` | Subtítulos medios / llamadas (`#watchme`, tarjetas) |
+| `--fs-heading-sm` | Subtítulos pequeños / labels destacados             |
+| `--fs-title`      | Eyebrow / subtítulo compacto (`h6`)                 |
+| `--fs-body-lg`    | Texto principal destacado (`.whoami`)               |
+| `--fs-body-md`    | Texto base de UI / botones                          |
+| `--fs-body-sm`    | Texto secundario / labels                           |
+| `--fs-caption`    | Texto legal / copyright                             |
+| `--fs-nav`        | Navegación principal                                |
+| `--fs-social`     | Iconografía social                                  |
+
+> Nota: Para tipografía principal evitar `px`, `vw` o `vh` directos. Usar siempre variables `--fs-*`.
+
 ## Servers
 
 ## Tasks
 
-- Hover de cards que suba a más del border overflow el space invader para poder hacer botón más grande
+- ✅ Hover de cards que suba a más del border overflow el space invader para poder hacer botón más grande
 
-- Menu hamburguesa para móvil guapo
+- ✅ Burger menu retro (could be improved)
+
+- ✅ Typography regularized with `rem + clamp()` variables (`--fs-*`).
 
 - Simplyfy styles and classes better understanding names.
-
-- Change font sizes to pxs and regularize all.
 
 - Add section Current work
 

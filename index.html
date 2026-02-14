@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elías Moreno Portfolio. Full Stack developer based in Malaga, Spain</title>
+    <title>Elías Moreno Portfolio. Full Stack developer based in Madrid, Spain</title>
     <link rel="shortcut icon" type="image/jpg" href="../images/personal/space.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,14 +17,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
-
 <body>
     <nav id="inicio">
         <div class="nav-image" alt="spaceInvader"></div>
-
-        <ul class="menu">
+        <div class="arcade-container">
+            <button class="retro-burger" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false"
+                type="button">
+                <div class="invader-pixels"></div>
+            </button>
+        </div>
+        <ul class="menu" id="main-menu">
             <li><a href="#last-projects">Portfolio</a></li>
             <li><a href="#about-me">About</a></li>
             <li><a href="#stack" id="stack-menu">My Stack</a></li>
@@ -40,13 +43,10 @@
                 </h6>
             </div>
             <p class="whoami">
-                <span class="color-change text-bold">Full Stack Developer</span>, sometimes I also
-                design webs : ).
-                <span class="whoami-specialized">Specialized in Node and Next.js
-                </span>
-                <span class="whoami-detail">Experienced in team & single projects</span>
-                <span class="whoami-detail">Love to code, learn and improve.</span>
-                <!-- Experienced in designing & developing custom Wordpress websites. -->
+                <span class="color-change text-bold">Full Stack Developer</span>, with with over five years of experience in team and independent projects.
+                <span class="whoami-specialized">Specialized in Node.js and Next.js </span>. Sometimes I also
+                design websites : ).
+                <span class="whoami-detail"> <span class="whoami-specialized">Passionate about coding, building and exploring</span> new technologies like AI without forgetting where it all started.</span>
             </p>
             <p id="watchme">Watch me in your laptop for full <span>hover</span> experience!</p>
         </div>
@@ -61,12 +61,41 @@
                 <div class="tech-grid" id="current-stack-container">
                     <!-- Tech items will be rendered here by JavaScript -->
                 </div>
-                <div class="button-section-two">
-                    <a role="button" href="#last-projects">
-                        View Portfolio
-                        <i class="fa"></i>
-                    </a>
-                </div>
+                <button type="button" class="button-section-two" onclick="location.href='#last-projects'">
+                    <span>View Portfolio</span>
+                    <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        viewBox="0 0 20 30" 
+                        width="20" 
+                        height="30" 
+                        fill="none" 
+                        style="image-rendering: pixelated;"
+                    >
+                        <rect x="0" y="24" width="20" height="6" fill="#66004c"/>
+                        <rect x="0" y="24" width="20" height="1" fill="#8a3f73"/>
+                        <rect x="0" y="28" width="20" height="2" fill="#3f002f"/>
+                        
+                        <rect x="0" y="12" width="20" height="12" fill="#e2cfe2"/>
+                        <rect x="0" y="23" width="20" height="1" fill="#f0e2f0"/>
+
+                        <rect x="4" y="19" width="12" height="2" fill="#5a003f"/>
+                        <rect x="6" y="17" width="8" height="2" fill="#5a003f"/>
+                        <rect x="8" y="16" width="4" height="1" fill="#5a003f"/>
+
+                        <g class="joystick-handle">
+                            <rect x="9" y="9" width="2" height="7" fill="#7f2b68"/>
+                            <rect x="9" y="10" width="1" height="6" fill="#bf97bf"/>
+
+                            <rect x="7" y="6" width="6" height="3" fill="#5a003f"/>
+                            <rect x="8" y="9" width="4" height="1" fill="#5a003f"/>
+                            
+                            <rect x="7" y="3" width="6" height="3" fill="#7a2f63"/>
+                            <rect x="8" y="2" width="4" height="1" fill="#7a2f63"/>
+                            
+                            <rect x="10" y="3" width="2" height="2" fill="#d8bfd8"/>
+                        </g>
+                    </svg>
+                </button>
             </div>
         </section>
         <div id="last-projects">
@@ -105,7 +134,7 @@
             </div>
         </section>
         <div id="stack">
-            <h3>Stack</h3>
+            <h3>My Stack</h3>
             <h6>Dancing to electro-pop like a robot from 1984</h6>
         </div>
         <section id="section-five">
@@ -114,29 +143,29 @@
             </div>
         </section>
         <div id="contact-form">
-            <h3>If you want me, you could have me</h3>
+            <h3>Want me? You could have me</h3>
             <h6>Except to help you with the moving van</h6>
         </div>
         <div class="form-container">
             <fieldset>
-                <legend>Data safe from Space Invaders and digital feudal lords</legend>
+                <legend>Data safe from Space Invaders <span class="legend-mobile-hide">and digital feudal lords </span>:</legend>
                 <form action="https://formsubmit.co/f1c78a7f95917047ef0dc4833c5de6e3" method="POST" target="_blank">
                     <label>
                         <p>Say your name &#9835 , say your nameee &#9835; :</p>
-                        <input type="text" placeholder="Name" name="name" minlength="1" required id="name"
+                        <input type="text" placeholder="Ser Duncan the Tall" name="name" minlength="1" required id="name"
                             onkeyup="formInputNotEmpty()">
                     </label>
                     <label>
                         <p>I say what? I say email:</p>
-                        <input type="email" placeholder="Email" name="email" minlength="1" required id="email"
+                        <input type="email" placeholder="motherofdragons@dracarys.dev" name="email" minlength="1" required id="email"
                             onkeyup="formInputNotEmpty()">
                     </label>
                     <label>
                         <p>Tell me more, tell me more:</p>
                         <textarea name="Message" rows="4" cols="50" id="message" onkeyup="formInputNotEmpty()"
-                            placeholder="Do not be shy...&#10;Also you can CHAT WITH ME  clicking in the footer ghost : )"></textarea>
+                            placeholder="Do not be shy my preeecious...&#10;You can also chat with me by clicking on the footer ghost : )"></textarea>
                     </label>
-                    <p>Privacy *</p>
+                    <p>* Privacy </p>
                     <p>By using this form you agree with the storage and handling of your data by this website. Please
                         read
                         our Privacy Policy for more information on how we handle your data.</p>
@@ -173,8 +202,11 @@
                 target="_blank"></a>
         </div>
         <div class="copywright">
-            <p>Copyright © <span id="year"></span><span id="elias"> Elías Moreno</span> • Madrid based Freelance Web
-                Designer & Developer</p>
+            <p>
+                Copyright © <span id="year"></span><span id="elias"> Elías Moreno</span><span
+                    class="copyright-separator"> • </span><span class="copyright-role">Madrid based Full Stack Developer
+                    & Designer</span>
+            </p>
         </div>
     </footer>
     <!-- Modal HTML -->
