@@ -37,18 +37,17 @@ Sistema tipográfico responsive basado en `rem + clamp()`.
 
 ## Tasks
 
-- ✅ Typography regularized with `rem + clamp()` variables (`--fs-*`).
-
-- Simplyfy styles and classes better understanding names.
+- Arreglar formulario (desde BBDD)
+- Sacar todo el texto plano a variables, poner unas banderas retro en el menú para cambiar el idioma.
 
 - Add section Current work
 
 - Add section Current project
 
-- Scroll or arrow section for section on mobile
+- Scroll or arrow section for section Last Full Stack Projects
+  & Wordpress work
+  on mobile (horizontally seing 2 cards at a time)
 
 - Netlify (change url) - Buy domain
 
 - Routing no se pueda entrar a donde yo no quiera (por ejemplo /data)
-
-- Arreglar formulario (desde BBDD)

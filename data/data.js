@@ -18,7 +18,7 @@ export const fullStackProjects = [
   },
   {
     id: "pitayafenicia",
-    title: "Fruit bussiness Online Store",
+    title: "Fruit business Store",
     description: "NextJs, Google Analytics",
     url: "https://pitayafenicia.es",
     buttonText: "Go to website",
@@ -113,9 +113,18 @@ export const wordpressProjects = [
 // ============================================
 export const stack = [
   {
+    title: "JS, TypeScript & PHP",
+    description: [
+      "I have worked in a daily basis for more than five years with those languages, now trying to connect in a senior level with AI workflows and getting more involved with the big picture.",
+      "Open to work with both languages and hope to learn more after them.",
+    ],
+    buttonText: "See More",
+    buttonUrl: "#work-section",
+  },
+  {
     title: "Full Stack",
     description: [
-      'We love to the develop websites, APIS, databases, whatever you need... See my last personal project <a href="https://pruebacomun-production.vercel.app" target="_blank" class="link-highlight">here!</a> and value my skills. Hope you like it : )',
+      'In love developing websites, APIS, databases, whatever you need... See my last personal project <a href="https://pruebacomun-production.vercel.app" target="_blank" class="link-highlight">here!</a> and value my skills. Hope you like it : )',
       "Not everything is about programming. Just almost everything.",
     ],
     buttonText: "See more",
@@ -138,15 +147,6 @@ export const stack = [
     ],
     buttonText: "See More",
     buttonUrl: "#last-projects",
-  },
-  {
-    title: "JavaScript & PHP",
-    description: [
-      "I have worked in a daily basis for more than five years with those languages, now trying to connect in a senior level with AI workflows and getting more involved with the big picture.",
-      "Open to work with both languages and hope to learn more after them.",
-    ],
-    buttonText: "See More",
-    buttonUrl: "#work-section",
   },
   {
     title: "Website Design",
@@ -247,7 +247,7 @@ export const currentStack = [
     imgClass: "tech-logo",
   },
   {
-    src: "../images/logos/nextjs-logo.png",
+    src: "../images/logos/next-logo.png",
     alt: "Next.js Logo",
     imgClass: "tech-logo",
   },
@@ -289,6 +289,6 @@ export const currentStack = [
   {
     src: "../images/logos/pm2-logo.png",
     alt: "PM2 Logo",
-    imgClass: "tech-logo-css",
+    imgClass: "tech-logo-pm2",
   },
 ];

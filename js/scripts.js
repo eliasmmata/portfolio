@@ -8,6 +8,7 @@ import {
 } from "../data/data.js";
 
 const JOYSTICK_ICON_PATH = "../assets/svgs/joystick.svg";
+
 const JOYSTICK_ICON_FALLBACK = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30" width="20" height="30" fill="none" style="image-rendering: pixelated;">
     <rect x="0" y="24" width="20" height="6" fill="#66004c"/>
@@ -29,6 +30,7 @@ const JOYSTICK_ICON_FALLBACK = `
     </g>
   </svg>
 `;
+
 let joystickIconMarkup = JOYSTICK_ICON_FALLBACK;
 
 async function loadJoystickIcon() {
@@ -82,11 +84,11 @@ function renderProjects(projects, containerId) {
   container.innerHTML = projects
     .map(
       (project) => `
-        <div class="image" id="${project.id}">
-            <div class="image__overlay image__overlay--blur">
-                <img class="image__img" src="../images/personal/space.jpg" alt="icon">
-                <div class="image__title">${project.title}</div>
-                <p class="image__description">${project.description}</p>
+        <div class="image project-card" id="${project.id}">
+            <div class="image__overlay project-card__overlay image__overlay--blur">
+                <img class="image__img project-card__icon" src="../images/personal/space.jpg" alt="icon">
+                <div class="image__title project-card__title">${project.title}</div>
+                <p class="image__description project-card__description">${project.description}</p>
                 <button
                     type="button"
                     class="button-section-three"
@@ -189,16 +191,36 @@ document.addEventListener("DOMContentLoaded", async function () {
   const mobileMenu = document.getElementById("main-menu");
 
   if (burgerButton && mobileMenu) {
-    burgerButton.addEventListener("click", function () {
-      const isOpen = mobileMenu.classList.toggle("is-open");
+    const setMenuState = (isOpen) => {
+      mobileMenu.classList.toggle("is-open", isOpen);
       burgerButton.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("menu-open", isOpen);
+    };
+
+    burgerButton.addEventListener("click", function () {
+      const isOpen = !mobileMenu.classList.contains("is-open");
+      setMenuState(isOpen);
     });
 
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", function () {
-        mobileMenu.classList.remove("is-open");
-        burgerButton.setAttribute("aria-expanded", "false");
+        setMenuState(false);
       });
+    });
+
+    document.addEventListener("pointerdown", function (event) {
+      if (!mobileMenu.classList.contains("is-open")) return;
+
+      const target = event.target;
+      if (mobileMenu.contains(target) || burgerButton.contains(target)) return;
+
+      setMenuState(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        setMenuState(false);
+      }
     });
   }
 
