@@ -1,4 +1,100 @@
 // ============================================
+// UI COPY - ENGLISH
+// ============================================
+export const uiContent = {
+  locale: "en",
+  htmlLang: "en",
+  metaTitle:
+    "Elías Moreno Portfolio. Full Stack developer based in Madrid, Spain",
+  menu: {
+    toggleOpen: "Open menu",
+    toggleClose: "Close menu",
+    cv: "My CV",
+    portfolio: "Portfolio",
+    about: "About",
+    currentStack: "Current Stack",
+    googlePlus: "Join me on Google+",
+    openGooglePlusJoke: "Open Google+ joke",
+    languageSwitcherLabel: "Language selector",
+    switchToEnglish: "Switch to English",
+    switchToSpanish: "Switch to Spanish",
+  },
+  accessibility: {
+    navImage: "Space invader avatar",
+    laptopImage: "Laptop",
+    imacImage: "Personal computer",
+    iphoneImage: "Mobile phone",
+    spaceImage: "Space photo",
+    alteregoImage: "Elías portrait",
+  },
+  hero: {
+    name: "Elías Moreno Mata",
+    oldText: "We come in peace",
+    newText: "We go in peace",
+    descriptionHtml:
+      '<span class="color-change text-bold">Full Stack Developer</span>, with over five years of experience in team and independent projects. <span class="whoami-specialized">Specialized in Node.js and Next.js</span>. Sometimes I also design websites : ). <span class="whoami-detail"><span class="whoami-specialized">Passionate about coding, building and exploring</span> new technologies like AI without forgetting where it all started.</span>',
+    watchMeHtml:
+      "Watch me in your laptop for full <span>hover</span> experience!",
+  },
+  sectionTwo: {
+    titleHtml:
+      '<span class="color-change text-bold">Current Stack</span> & growing',
+    cvButton: "Open CV",
+    portfolioButton: "View Portfolio",
+  },
+  sections: {
+    lastProjectsTitle: "Last Full Stack Projects",
+    lastProjectsSubtitle: "#NextJs #React #MySql #NodeJs #ReactNative",
+    wordpressTitle: "WordPress work",
+    wordpressSubtitle: "Did you try turning off and on again?",
+    aboutTitle: "About me",
+    aboutSubtitle:
+      "Born in the 80s, raised in the 90s, living 21st Century full",
+    stackTitle: "Current Stack",
+    stackSubtitle: "Dancing to electro-pop like a robot from 1984",
+    contactTitle: "Want me? You could have me",
+    contactSubtitle: "Except to help you with the moving van",
+  },
+  form: {
+    legendHtml:
+      'Data safe from Space Invaders <span class="legend-mobile-hide">and digital feudal lords </span>:',
+    nameLabel: "Say your name ♪ , say your nameee ♪ :",
+    namePlaceholder: "Ser Duncan the Tall",
+    emailLabel: "I say what? I say email:",
+    emailPlaceholder: "motherofdragons@dracarys.dev",
+    messageLabel: "Tell me more, tell me more:",
+    messagePlaceholder:
+      "Do not be shy my preeecious...\nYou can also chat with me by clicking on the footer ghost : )",
+    privacyTitle: "* Privacy",
+    privacyBodyHtml:
+      'By using this form you agree with the storage and handling of your data by this website. <br class="br-desktop" /> Please read our Privacy Policy for more information on how we handle your data.',
+    agree: "I agree",
+    submit: "Send",
+    tooltip: "Fill all fields correctly",
+  },
+  footer: {
+    backToTop: "Back to top",
+    copyrightLabel: "Copyright ©",
+    authorName: "Elías Moreno",
+    separator: " • ",
+    copyrightRole: "Madrid based Full Stack Developer & Designer",
+  },
+  googlePlusJoke: {
+    title: "Google+ Reunion",
+    text: "It didn't work, bro. Let it go",
+    close: "Close",
+    imageAlt: "Tumbleweed rolling by",
+  },
+  modal: {
+    title: "Thanks!",
+    bodyHtml:
+      'Your message has been delivered successfully.<br>Check your email and <span class="text-color-primary">don\'t forget Spam folder</span> just in case.',
+    confirmButton: "OK",
+    learnFrontend: "Learn FrontEnd",
+  },
+};
+
+// ============================================
 // DATA ARRAYS - Full Stack Projects
 // ============================================
 export const fullStackProjects = [
@@ -115,7 +211,7 @@ export const stack = [
   {
     title: "JS, TypeScript & PHP",
     description: [
-      "I have worked in a daily basis for more than five years with those languages, now trying to connect in a senior level with AI workflows and getting more involved with the big picture.",
+      "I have worked daily for more than five years with those languages, now trying to connect in a senior level with AI workflows and getting more involved with the big picture.",
       "Open to work with both languages and hope to learn more after them.",
     ],
     buttonText: "See More",
@@ -124,7 +220,7 @@ export const stack = [
   {
     title: "Full Stack",
     description: [
-      'In love developing websites, APIS, databases, whatever you need... See my last personal project <a href="https://pruebacomun-production.vercel.app" target="_blank" class="link-highlight">here!</a> and value my skills. Hope you like it : )',
+      'In love with developing websites, APIs, databases, whatever you need... See my last personal project <a href="https://pruebacomun-production.vercel.app" target="_blank" class="link-highlight">here!</a> and value my skills. Hope you like it : )',
       "Not everything is about programming. Just almost everything.",
     ],
     buttonText: "See more",
@@ -133,8 +229,8 @@ export const stack = [
   {
     title: "React Native & Expo",
     description: [
-      "Mobile apps for IOS and Android using React Native and Expo. It simplifies the development and deployment process.",
-      "We can build quickly prototypes and cross-platform apps without having to write native code.",
+      "Mobile apps for IOS and Android using React Native and Expo. It simplifies development and deployment.",
+      "We can quickly build prototypes and cross-platform apps without writing native code.",
     ],
     buttonText: "See More",
     buttonUrl: "#last-projects",
@@ -142,8 +238,8 @@ export const stack = [
   {
     title: "React & NextJS",
     description: [
-      "React-based framework for building server-side rendered (SSR) and statically generated web applications. It provides features like server-side rendering and static file serving.",
-      "Build easily performant and SEO-friendly web applications..",
+      "React-based framework for server-side rendered (SSR) and statically generated web applications. It includes features like server-side rendering and static file serving.",
+      "Build easily performant and SEO-friendly web applications.",
     ],
     buttonText: "See More",
     buttonUrl: "#last-projects",
@@ -151,8 +247,8 @@ export const stack = [
   {
     title: "Website Design",
     description: [
-      "We design your website from scratch. Tell us your idea, tell us about your business or yourself and we will take care of everything.",
-      "A love for your project that we will feel like ours.Get involved or not worry at all, you choose.",
+      "We design your website from scratch. Tell us your idea, tell us about your business or yourself and we will handle everything.",
+      "A love for your project that we will feel like ours. Get involved or not worry at all, you choose.",
     ],
     buttonText: "See More",
     buttonUrl: "#work-section",
@@ -160,8 +256,8 @@ export const stack = [
   {
     title: "WordPress sites",
     description: [
-      "More than 70% of the websites are created with Wordpress. Economical templates designs so you can have a website up running in a few days.",
-      "We recommend the best hosting and all the essentials so that you can easily maintain it.",
+      "More than 70% of websites are created with WordPress. Affordable template-based designs so you can launch a website in a few days.",
+      "We recommend the best hosting and essentials so you can maintain it easily.",
     ],
     buttonText: "See More",
     buttonUrl: "#work-section",
@@ -189,7 +285,7 @@ export const juniorProjects = [
   {
     id: "cardsproject",
     title: "Fetch, Crud, Posts Demo",
-    description: "React & Typescript",
+    description: "React & TypeScript",
     url: "https://cards-project-react.netlify.app/",
     buttonText: "Go to demo",
   },
@@ -202,8 +298,8 @@ export const aboutMeCards = [
   {
     title: "Málaga, London, Barcelona, Madrid.",
     description: [
-      "You don't know a place until you live there. Working in these big cities opened my mind to another level.",
-      "After returning home for a while, I'm embarking on a second stage in my beloved Madrid.",
+      "You do not know a place until you live there. Working in these big cities opened my mind to another level.",
+      "After returning home for a while, I am embarking on a second stage in my beloved Madrid.",
     ],
     buttonText: "Go to Instagram",
     buttonUrl: "https://www.instagram.com/eliasmmata/",
@@ -227,6 +323,7 @@ export const aboutMeCards = [
     buttonUrl: "https://prezi.com/view/VGAlVGrVltMb5SGFs90O/",
   },
 ];
+
 // ============================================
 // DATA ARRAYS - Current Stack
 // ============================================

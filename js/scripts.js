@@ -1,13 +1,46 @@
 import {
-  fullStackProjects,
-  wordpressProjects,
-  juniorProjects,
-  stack,
-  aboutMeCards,
-  currentStack,
+  uiContent as uiContentEn,
+  fullStackProjects as fullStackProjectsEn,
+  wordpressProjects as wordpressProjectsEn,
+  juniorProjects as juniorProjectsEn,
+  stack as stackEn,
+  aboutMeCards as aboutMeCardsEn,
+  currentStack as currentStackEn,
 } from "../data/data.js";
+import {
+  uiContent as uiContentEs,
+  fullStackProjects as fullStackProjectsEs,
+  wordpressProjects as wordpressProjectsEs,
+  juniorProjects as juniorProjectsEs,
+  stack as stackEs,
+  aboutMeCards as aboutMeCardsEs,
+  currentStack as currentStackEs,
+} from "../data/data.es.js";
 
 const JOYSTICK_ICON_PATH = "../assets/svgs/joystick.svg";
+const LANGUAGE_STORAGE_KEY = "portfolio-language";
+const DEFAULT_LANGUAGE = "en";
+
+const localizedContent = {
+  en: {
+    ui: uiContentEn,
+    fullStackProjects: fullStackProjectsEn,
+    wordpressProjects: wordpressProjectsEn,
+    juniorProjects: juniorProjectsEn,
+    stack: stackEn,
+    aboutMeCards: aboutMeCardsEn,
+    currentStack: currentStackEn,
+  },
+  es: {
+    ui: uiContentEs,
+    fullStackProjects: fullStackProjectsEs,
+    wordpressProjects: wordpressProjectsEs,
+    juniorProjects: juniorProjectsEs,
+    stack: stackEs,
+    aboutMeCards: aboutMeCardsEs,
+    currentStack: currentStackEs,
+  },
+};
 
 const JOYSTICK_ICON_FALLBACK = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 30" width="20" height="30" fill="none" style="image-rendering: pixelated;">
@@ -32,6 +65,8 @@ const JOYSTICK_ICON_FALLBACK = `
 `;
 
 let joystickIconMarkup = JOYSTICK_ICON_FALLBACK;
+let currentData = localizedContent[DEFAULT_LANGUAGE];
+let menuStateUpdater = null;
 
 async function loadJoystickIcon() {
   try {
@@ -50,6 +85,132 @@ function injectStaticJoystickIcons() {
   document.querySelectorAll("[data-joystick-icon]").forEach((slot) => {
     slot.innerHTML = joystickIconMarkup;
   });
+}
+
+function setElementText(id, value) {
+  const element = document.getElementById(id);
+  if (element && typeof value === "string") {
+    element.textContent = value;
+  }
+}
+
+function setElementHtml(id, value) {
+  const element = document.getElementById(id);
+  if (element && typeof value === "string") {
+    element.innerHTML = value;
+  }
+}
+
+function setElementAttribute(id, attribute, value) {
+  const element = document.getElementById(id);
+  if (element && typeof value === "string") {
+    element.setAttribute(attribute, value);
+  }
+}
+
+function updateLanguageButtons(language) {
+  document.querySelectorAll(".lang-button").forEach((button) => {
+    const isActive = button.dataset.language === language;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function applyStaticContent(content, isMenuOpen = false) {
+  const { ui } = content;
+
+  document.documentElement.lang = ui.htmlLang;
+  document.title = ui.metaTitle;
+
+  setElementAttribute(
+    "menu-toggle",
+    "aria-label",
+    isMenuOpen ? ui.menu.toggleClose : ui.menu.toggleOpen,
+  );
+  setElementText("nav-cv-link", ui.menu.cv);
+  setElementText("nav-portfolio-link", ui.menu.portfolio);
+  setElementText("nav-about-link", ui.menu.about);
+  setElementText("stack-menu", ui.menu.currentStack);
+  setElementText("nav-googleplus-link", ui.menu.googlePlus);
+  setElementAttribute("nav-googleplus-link", "aria-label", ui.menu.openGooglePlusJoke);
+  setElementAttribute("nav-googleplus-link", "title", ui.menu.openGooglePlusJoke);
+  setElementAttribute("language-switcher", "aria-label", ui.menu.languageSwitcherLabel);
+
+  const englishButton = document.querySelector('.lang-button[data-language="en"]');
+  const spanishButton = document.querySelector('.lang-button[data-language="es"]');
+  if (englishButton) {
+    englishButton.setAttribute("aria-label", ui.menu.switchToEnglish);
+    englishButton.setAttribute("title", ui.menu.switchToEnglish);
+  }
+  if (spanishButton) {
+    spanishButton.setAttribute("aria-label", ui.menu.switchToSpanish);
+    spanishButton.setAttribute("title", ui.menu.switchToSpanish);
+  }
+
+  setElementAttribute("nav-image", "aria-label", ui.accessibility.navImage);
+  setElementAttribute("laptop-image", "alt", ui.accessibility.laptopImage);
+  setElementAttribute("imac-image", "alt", ui.accessibility.imacImage);
+  setElementAttribute("iphone-image", "alt", ui.accessibility.iphoneImage);
+  setElementAttribute("space-image", "alt", ui.accessibility.spaceImage);
+  setElementAttribute("alterego-image", "alt", ui.accessibility.alteregoImage);
+
+  setElementText("hero-name", ui.hero.name);
+  setElementText("hero-old-text", ui.hero.oldText);
+  setElementText("hero-new-text", ui.hero.newText);
+  setElementHtml("hero-description", ui.hero.descriptionHtml);
+  setElementHtml("watchme", ui.hero.watchMeHtml);
+
+  setElementHtml("section-two-title", ui.sectionTwo.titleHtml);
+  setElementText("section-two-button-cv", ui.sectionTwo.cvButton);
+  setElementText("section-two-button-portfolio", ui.sectionTwo.portfolioButton);
+
+  setElementText("last-projects-title", ui.sections.lastProjectsTitle);
+  setElementText("last-projects-subtitle", ui.sections.lastProjectsSubtitle);
+  setElementText("wordpress-title", ui.sections.wordpressTitle);
+  setElementText("wordpress-subtitle", ui.sections.wordpressSubtitle);
+  setElementText("about-section-title", ui.sections.aboutTitle);
+  setElementText("about-section-subtitle", ui.sections.aboutSubtitle);
+  setElementText("stack-section-title", ui.sections.stackTitle);
+  setElementText("stack-section-subtitle", ui.sections.stackSubtitle);
+  setElementText("contact-title", ui.sections.contactTitle);
+  setElementText("contact-subtitle", ui.sections.contactSubtitle);
+
+  setElementHtml("form-legend", ui.form.legendHtml);
+  setElementText("form-name-label", ui.form.nameLabel);
+  setElementAttribute("name", "placeholder", ui.form.namePlaceholder);
+  setElementText("form-email-label", ui.form.emailLabel);
+  setElementAttribute("email", "placeholder", ui.form.emailPlaceholder);
+  setElementText("form-message-label", ui.form.messageLabel);
+  setElementAttribute("message", "placeholder", ui.form.messagePlaceholder);
+  setElementText("form-privacy-title", ui.form.privacyTitle);
+  setElementHtml("form-privacy-copy", ui.form.privacyBodyHtml);
+  setElementText("form-privacy-checkbox", ui.form.agree);
+  setElementText("tooltiptext", ui.form.tooltip);
+
+  const submitButton = document.getElementById("submit-button-form");
+  if (submitButton) {
+    submitButton.value = ui.form.submit;
+  }
+
+  setElementAttribute("back-to-top-link", "title", ui.footer.backToTop);
+  setElementAttribute("back-to-top-link", "aria-label", ui.footer.backToTop);
+  setElementText("copyright-label", ui.footer.copyrightLabel);
+  setElementText("elias", ` ${ui.footer.authorName}`);
+  setElementText("copyright-separator", ui.footer.separator);
+  setElementText("copyright-role", ui.footer.copyrightRole);
+
+  setElementText("modal-title", ui.modal.title);
+  setElementHtml("modal-body-copy", ui.modal.bodyHtml);
+  setElementText("modal-confirm-button", ui.modal.confirmButton);
+  setElementText("learn-frontend", ui.modal.learnFrontend);
+
+  setElementText("googleplus-joke-title", ui.googlePlusJoke.title);
+  setElementText("googleplus-joke-text", ui.googlePlusJoke.text);
+  setElementText("googleplus-joke-close", ui.googlePlusJoke.close);
+  setElementAttribute("googleplus-joke-close", "aria-label", ui.googlePlusJoke.close);
+  setElementAttribute("googleplus-joke-image", "alt", ui.googlePlusJoke.imageAlt);
+
+  updateLanguageButtons(content.ui.locale);
 }
 
 // ============================================
@@ -107,11 +268,11 @@ function renderProjects(projects, containerId) {
 /**
  * Render stack cards
  */
-function renderStack(stack, containerId) {
+function renderStack(stackItems, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  container.innerHTML = stack
+  container.innerHTML = stackItems
     .map(
       (service) => `
         <div class="card">
@@ -161,50 +322,121 @@ function renderAboutCards(cards, containerId) {
     .join("");
 }
 
+function persistLanguage(language) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  } catch (error) {
+    console.warn("Unable to persist language preference.", error);
+  }
+}
+
+function getInitialLanguage() {
+  try {
+    const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    if (storedLanguage && localizedContent[storedLanguage]) {
+      return storedLanguage;
+    }
+  } catch (error) {
+    console.warn("Unable to read language preference.", error);
+  }
+
+  return navigator.language?.toLowerCase().startsWith("es") ? "es" : DEFAULT_LANGUAGE;
+}
+
+function renderLocalizedContent(language, isMenuOpen = false) {
+  const safeLanguage = localizedContent[language] ? language : DEFAULT_LANGUAGE;
+  currentData = localizedContent[safeLanguage];
+
+  applyStaticContent(currentData, isMenuOpen);
+
+  renderProjects(currentData.fullStackProjects, "fullstack-projects-container");
+  renderProjects(currentData.wordpressProjects, "wordpress-projects-container");
+  // renderProjects(currentData.juniorProjects, "junior-projects-container");
+  renderStack(currentData.stack, "stack-container");
+  renderAboutCards(currentData.aboutMeCards, "about-cards-container");
+  renderCurrentStack(currentData.currentStack, "current-stack-container");
+
+  formInputNotEmpty();
+  persistLanguage(safeLanguage);
+}
+
 // ============================================
 // FORM VALIDATION
 // ============================================
 function formInputNotEmpty() {
-  var emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  var $$mail = document.getElementById("email");
+  const emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const mailInput = document.getElementById("email");
+  const nameInput = document.getElementById("name");
+  const messageInput = document.getElementById("message");
+  const privacyInput = document.getElementById("privacy");
+  const submitButton = document.getElementById("submit-button-form");
+  const tooltip = document.getElementById("tooltiptext");
 
   if (
-    document.getElementById("name").value === "" ||
-    document.getElementById("email").value === "" ||
-    !$$mail.value.match(emailReg) ||
-    document.getElementById("message").value === "" ||
-    !document.getElementById("privacy").checked
+    !nameInput ||
+    !mailInput ||
+    !messageInput ||
+    !privacyInput ||
+    !submitButton ||
+    !tooltip
   ) {
-    document.getElementById("submit-button-form").disabled = true;
-    document.getElementById("tooltiptext").style.display = "inline-block";
+    return;
+  }
+
+  if (
+    nameInput.value === "" ||
+    mailInput.value === "" ||
+    !mailInput.value.match(emailReg) ||
+    messageInput.value === "" ||
+    !privacyInput.checked
+  ) {
+    submitButton.disabled = true;
+    tooltip.style.display = "inline-block";
   } else {
-    document.getElementById("submit-button-form").disabled = false;
-    document.getElementById("tooltiptext").style.display = "none";
+    submitButton.disabled = false;
+    tooltip.style.display = "none";
   }
 }
+
+window.formInputNotEmpty = formInputNotEmpty;
 
 // ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener("DOMContentLoaded", async function () {
-  const burgerButton = document.querySelector(".retro-burger");
+  const burgerButton = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("main-menu");
+  const googlePlusLink = document.getElementById("nav-googleplus-link");
+  const googlePlusModal = document.getElementById("googleplus-joke-modal");
+
+  let isMenuOpen = false;
+  const setGooglePlusModalState = (isOpen) => {
+    if (!googlePlusModal) return;
+    googlePlusModal.hidden = !isOpen;
+    googlePlusModal.setAttribute("aria-hidden", String(!isOpen));
+    googlePlusModal.classList.toggle("is-open", isOpen);
+    document.body.classList.toggle("googleplus-open", isOpen);
+  };
 
   if (burgerButton && mobileMenu) {
-    const setMenuState = (isOpen) => {
+    menuStateUpdater = (isOpen) => {
+      isMenuOpen = isOpen;
       mobileMenu.classList.toggle("is-open", isOpen);
       burgerButton.setAttribute("aria-expanded", String(isOpen));
+      burgerButton.setAttribute(
+        "aria-label",
+        isOpen ? currentData.ui.menu.toggleClose : currentData.ui.menu.toggleOpen,
+      );
       document.body.classList.toggle("menu-open", isOpen);
     };
 
     burgerButton.addEventListener("click", function () {
-      const isOpen = !mobileMenu.classList.contains("is-open");
-      setMenuState(isOpen);
+      menuStateUpdater(!mobileMenu.classList.contains("is-open"));
     });
 
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", function () {
-        setMenuState(false);
+        menuStateUpdater(false);
       });
     });
 
@@ -214,26 +446,55 @@ document.addEventListener("DOMContentLoaded", async function () {
       const target = event.target;
       if (mobileMenu.contains(target) || burgerButton.contains(target)) return;
 
-      setMenuState(false);
+      menuStateUpdater(false);
     });
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-        setMenuState(false);
+        if (googlePlusModal?.classList.contains("is-open")) {
+          setGooglePlusModalState(false);
+          return;
+        }
+        menuStateUpdater(false);
       }
     });
   }
 
+  if (googlePlusLink && googlePlusModal) {
+    googlePlusLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (menuStateUpdater) {
+        menuStateUpdater(false);
+      }
+      setGooglePlusModalState(true);
+    });
+
+    googlePlusModal.querySelectorAll("[data-googleplus-close]").forEach((control) => {
+      control.addEventListener("click", function () {
+        setGooglePlusModalState(false);
+      });
+    });
+  }
+
+  document.querySelectorAll(".lang-button").forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetLanguage = button.dataset.language;
+      renderLocalizedContent(targetLanguage, false);
+      if (menuStateUpdater) {
+        menuStateUpdater(false);
+      }
+    });
+  });
+
   // Set current year
-  document.getElementById("year").innerHTML = new Date().getFullYear();
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.innerHTML = new Date().getFullYear();
+  }
+
   await loadJoystickIcon();
   injectStaticJoystickIcons();
 
-  // Render all sections
-  renderProjects(fullStackProjects, "fullstack-projects-container");
-  renderProjects(wordpressProjects, "wordpress-projects-container");
-  // renderProjects(juniorProjects, 'junior-projects-container');
-  renderStack(stack, "stack-container");
-  renderAboutCards(aboutMeCards, "about-cards-container");
-  renderCurrentStack(currentStack, "current-stack-container");
+  const initialLanguage = getInitialLanguage();
+  renderLocalizedContent(initialLanguage, isMenuOpen);
 });

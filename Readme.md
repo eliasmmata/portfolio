@@ -38,7 +38,6 @@ Sistema tipográfico responsive basado en `rem + clamp()`.
 ## Tasks
 
 - Arreglar formulario (desde BBDD)
-- Sacar todo el texto plano a variables, poner unas banderas retro en el menú para cambiar el idioma.
 
 - Add section Current work
 
