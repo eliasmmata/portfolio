@@ -1342,7 +1342,7 @@ nav {
 }
 
 fieldset {
-  background: linear-gradient(130deg, #ad96b7, var(--color-accent-lilac) 52%, #c9b6d0);
+  background: linear-gradient(130deg, #fcf8ff, #f7effd 52%, #efe4f7);
   border: none;
   color: var(--color-accent-plum);
   box-shadow:
