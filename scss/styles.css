@@ -620,9 +620,9 @@ nav {
     url("../images/personal/space-no-bg.png") right center / var(--divider-icon-size) var(--divider-icon-size) no-repeat,
     radial-gradient(
       circle,
-      rgba(var(--rgb-accent-cyan), 0.95) 0%,
-      rgba(var(--rgb-accent-cyan), 0.95) 28%,
-      transparent 31%,
+      var(--color-accent-plum) 0%,
+      var(--color-accent-plum) 22.4%,
+      transparent 24.8%,
       transparent 100%
     ) left center / var(--divider-dot-step) 100% repeat-x;
   background-origin: border-box, content-box;
