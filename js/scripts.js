@@ -135,6 +135,18 @@ function applyStaticContent(content, isMenuOpen = false) {
   setElementAttribute("nav-googleplus-link", "aria-label", ui.menu.openGooglePlusJoke);
   setElementAttribute("nav-googleplus-link", "title", ui.menu.openGooglePlusJoke);
   setElementAttribute("language-switcher", "aria-label", ui.menu.languageSwitcherLabel);
+  document
+    .querySelectorAll('.projects-nav-btn[data-carousel-direction="prev"]')
+    .forEach((button) => {
+      button.setAttribute("aria-label", ui.projectsCarousel.previous);
+      button.setAttribute("title", ui.projectsCarousel.previous);
+    });
+  document
+    .querySelectorAll('.projects-nav-btn[data-carousel-direction="next"]')
+    .forEach((button) => {
+      button.setAttribute("aria-label", ui.projectsCarousel.next);
+      button.setAttribute("title", ui.projectsCarousel.next);
+    });
 
   const englishButton = document.querySelector('.lang-button[data-language="en"]');
   const spanishButton = document.querySelector('.lang-button[data-language="es"]');
@@ -307,7 +319,9 @@ function renderAboutCards(cards, containerId) {
       return `
         <div class="portfolio-card">
             <h4>${card.title}</h4>
-            ${descriptionHtml}
+            <div class="about-card-copy">
+              ${descriptionHtml}
+            </div>
             <button
                 type="button"
                 class="button-section-four"
@@ -320,6 +334,27 @@ function renderAboutCards(cards, containerId) {
     `;
     })
     .join("");
+}
+
+function syncAboutCardsHeight() {
+  const cards = document.querySelectorAll("#about-cards-container .portfolio-card");
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    card.style.minHeight = "";
+  });
+
+  let maxHeight = 0;
+  cards.forEach((card) => {
+    maxHeight = Math.max(maxHeight, card.getBoundingClientRect().height);
+  });
+
+  if (!Number.isFinite(maxHeight) || maxHeight <= 0) return;
+
+  const normalizedHeight = `${Math.ceil(maxHeight)}px`;
+  cards.forEach((card) => {
+    card.style.minHeight = normalizedHeight;
+  });
 }
 
 function persistLanguage(language) {
@@ -354,6 +389,8 @@ function renderLocalizedContent(language, isMenuOpen = false) {
   // renderProjects(currentData.juniorProjects, "junior-projects-container");
   renderStack(currentData.stack, "stack-container");
   renderAboutCards(currentData.aboutMeCards, "about-cards-container");
+  syncAboutCardsHeight();
+  window.requestAnimationFrame(syncAboutCardsHeight);
   renderCurrentStack(currentData.currentStack, "current-stack-container");
 
   formInputNotEmpty();
@@ -476,6 +513,22 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
   }
 
+  document.querySelectorAll(".projects-nav-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const targetId = button.dataset.carouselTarget;
+      const direction = button.dataset.carouselDirection;
+      const track = targetId ? document.getElementById(targetId) : null;
+      if (!track) return;
+
+      const firstCard = track.querySelector(".project-card, .portfolio-card, .card");
+      const gapValue = getComputedStyle(track).columnGap || getComputedStyle(track).gap || "0";
+      const gap = parseFloat(gapValue) || 0;
+      const step = firstCard ? firstCard.getBoundingClientRect().width + gap : track.clientWidth * 0.85;
+      const offset = direction === "next" ? step : -step;
+      track.scrollBy({ left: offset, behavior: "smooth" });
+    });
+  });
+
   document.querySelectorAll(".lang-button").forEach((button) => {
     button.addEventListener("click", function () {
       const targetLanguage = button.dataset.language;
@@ -485,6 +538,12 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     });
   });
+
+  const handleResize = () => {
+    syncAboutCardsHeight();
+  };
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("load", handleResize);
 
   // Set current year
   const yearElement = document.getElementById("year");

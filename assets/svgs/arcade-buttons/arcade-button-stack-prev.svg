@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="arcade button">
+  <defs>
+    <radialGradient id="g" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#d8afca"/>
+      <stop offset="58%" stop-color="#996185"/>
+      <stop offset="100%" stop-color="#693f5b"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="29" fill="#3a2232"/>
+  <circle cx="32" cy="32" r="26" fill="url(#g)"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="rgba(255,255,255,.26)" stroke-width="2"/>
+  <path d="M36 22L24 32L36 42V22Z" fill="#00d7c3"/>
+</svg>

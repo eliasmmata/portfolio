@@ -84,16 +84,40 @@
             <h3 id="last-projects-title"></h3>
             <h6 id="last-projects-subtitle"></h6>
         </div>
-        <section class="section-three-front projects-grid" id="fullstack-projects-container">
-            <!-- Projects will be rendered here by JavaScript -->
-        </section>
+        <div class="projects-carousel-shell">
+            <section class="section-three-front projects-grid projects-carousel-track" id="fullstack-projects-container">
+                <!-- Projects will be rendered here by JavaScript -->
+            </section>
+            <div class="projects-carousel-controls">
+                <button type="button" class="projects-nav-btn projects-nav-btn-prev" data-carousel-target="fullstack-projects-container"
+                    data-carousel-direction="prev" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-prev.svg" alt="" aria-hidden="true">
+                </button>
+                <button type="button" class="projects-nav-btn projects-nav-btn-next" data-carousel-target="fullstack-projects-container"
+                    data-carousel-direction="next" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-next.svg" alt="" aria-hidden="true">
+                </button>
+            </div>
+        </div>
         <div id="work-section">
             <h3 id="wordpress-title"></h3>
             <h6 id="wordpress-subtitle"></h6>
         </div>
-        <section class="section-three-work projects-grid" id="wordpress-projects-container">
-            <!-- WordPress projects will be rendered here by JavaScript -->
-        </section>
+        <div class="projects-carousel-shell">
+            <section class="section-three-work projects-grid projects-carousel-track" id="wordpress-projects-container">
+                <!-- WordPress projects will be rendered here by JavaScript -->
+            </section>
+            <div class="projects-carousel-controls">
+                <button type="button" class="projects-nav-btn projects-nav-btn-prev" data-carousel-target="wordpress-projects-container"
+                    data-carousel-direction="prev" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-prev.svg" alt="" aria-hidden="true">
+                </button>
+                <button type="button" class="projects-nav-btn projects-nav-btn-next" data-carousel-target="wordpress-projects-container"
+                    data-carousel-direction="next" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-next.svg" alt="" aria-hidden="true">
+                </button>
+            </div>
+        </div>
         <div id="about-me">
             <h3 id="about-section-title"></h3>
             <h6 id="about-section-subtitle"></h6>
@@ -105,8 +129,18 @@
                 <img class="alterego-hover" id="alterego-image" src="../images/personal/portfolioPic.jpg" alt="" />
             </div>
             </div>
-            <div id="about-cards-container">
+            <div id="about-cards-container" class="about-carousel-track">
                 <!-- About me cards will be rendered here by JavaScript -->
+            </div>
+            <div class="projects-carousel-controls">
+                <button type="button" class="projects-nav-btn projects-nav-btn-prev" data-carousel-target="about-cards-container"
+                    data-carousel-direction="prev" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-prev.svg" alt="" aria-hidden="true">
+                </button>
+                <button type="button" class="projects-nav-btn projects-nav-btn-next" data-carousel-target="about-cards-container"
+                    data-carousel-direction="next" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-next.svg" alt="" aria-hidden="true">
+                </button>
             </div>
         </section>
         <div id="stack">
@@ -114,8 +148,18 @@
             <h6 id="stack-section-subtitle"></h6>
         </div>
         <section id="section-five">
-            <div id="stack-container">
+            <div id="stack-container" class="stack-carousel-track">
                 <!-- Service cards will be rendered here by JavaScript -->
+            </div>
+            <div class="projects-carousel-controls">
+                <button type="button" class="projects-nav-btn projects-nav-btn-prev" data-carousel-target="stack-container"
+                    data-carousel-direction="prev" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-prev.svg" alt="" aria-hidden="true">
+                </button>
+                <button type="button" class="projects-nav-btn projects-nav-btn-next" data-carousel-target="stack-container"
+                    data-carousel-direction="next" aria-label="">
+                    <img src="../assets/svgs/arcade-buttons/arcade-button-fullstack-next.svg" alt="" aria-hidden="true">
+                </button>
             </div>
         </section>
         <div id="contact-form">

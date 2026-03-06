@@ -855,6 +855,18 @@ nav {
   justify-content: center;
 }
 
+.projects-carousel-shell {
+  position: relative;
+}
+
+.projects-carousel-controls {
+  display: none;
+}
+
+.projects-nav-btn {
+  display: none;
+}
+
 .image,
 .project-card {
   width: 90%;
@@ -1671,6 +1683,21 @@ footer {
   margin-bottom: 5rem;
 }
 
+#about-cards-container .portfolio-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#about-cards-container .about-card-copy {
+  flex: 1 1 auto;
+  margin-bottom: 1.25rem;
+}
+
+#about-cards-container .portfolio-card .button-section-four {
+  margin-top: auto;
+}
+
 /* portfolio section hover */
 .button-section-three:hover {
   -webkit-transform: translate(2px, 2px);
@@ -2163,6 +2190,7 @@ body.googleplus-open {
   background: var(--color-black);
   border: 1px solid var(--color-black);
   margin-bottom: 0.7rem;
+  border-radius: 10px;
 }
 
 .googleplus-joke-screen::before,
@@ -2523,19 +2551,10 @@ button.close {
   }
 }
 
-.tech-logo,
-.tech-logo-css,
-.tech-logo-docker,
-.tech-logo-pm2 {
+.tech-logo {
   width: var(--tech-logo-size);
   height: var(--tech-logo-size);
   object-fit: contain;
-}
-
-.tech-logo-docker,
-.tech-logo-pm2 {
-  background-color: var(--color-white);
-  padding: 4px;
 }
 
 .form-container {
@@ -2815,6 +2834,138 @@ button.close {
     border-color: rgba(var(--rgb-accent-pink), 0.72);
   }
 
+  .projects-carousel-shell {
+    padding: 0;
+  }
+
+  .projects-carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0.9rem;
+    padding: 3rem 0.85rem 0.35rem;
+    scroll-padding-inline: 0.85rem;
+    margin-bottom: 0.9rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .projects-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects-carousel-track .project-card {
+    flex: 0 0 min(78vw, 22rem);
+    width: min(78vw, 22rem);
+    scroll-snap-align: start;
+    margin: 0;
+  }
+
+  .projects-carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.85rem;
+    margin: 0 0 2.35rem;
+  }
+
+  .projects-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0;
+  }
+
+  .projects-nav-btn img {
+    width: 44px;
+    height: 44px;
+    display: block;
+    image-rendering: pixelated;
+  }
+
+  .projects-nav-btn:hover,
+  .projects-nav-btn:focus-visible {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 4px rgba(var(--rgb-accent-cyan), 0.45));
+    outline: none;
+  }
+
+  .projects-nav-btn:active {
+    transform: translate(1px, 1px) scale(0.98);
+  }
+
+  #about-cards-container.about-carousel-track,
+  #stack-container.stack-carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 0.9rem;
+    padding: 1.35rem 0.85rem 0.35rem;
+    scroll-padding-inline: 0.85rem;
+    margin-bottom: 0.9rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #about-cards-container.about-carousel-track {
+    gap: 0;
+    padding: 1.35rem 0 0.35rem;
+    scroll-padding-inline: 0;
+  }
+
+  #about-cards-container.about-carousel-track::-webkit-scrollbar,
+  #stack-container.stack-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #about-cards-container.about-carousel-track .portfolio-card {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: none;
+    scroll-snap-align: start;
+    margin: 0;
+    padding: 0 0.45rem;
+  }
+
+  #about-cards-container.about-carousel-track .portfolio-card:first-child {
+    margin-left: 0.85rem;
+  }
+
+  #about-cards-container.about-carousel-track .portfolio-card:last-child {
+    margin-right: 0.85rem;
+  }
+
+  #about-cards-container.about-carousel-track .button-section-four {
+    width: min(70vw, 17rem);
+    margin: 1rem auto 1.45rem;
+  }
+
+  #stack-container.stack-carousel-track {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  #stack-container.stack-carousel-track .card {
+    flex: 0 0 min(82vw, 24rem);
+    width: min(82vw, 24rem);
+    scroll-snap-align: start;
+    margin: 0;
+  }
+
+  #section-five > .projects-carousel-controls {
+    width: 100%;
+  }
+
   .name {
     font-size: var(--fs-display-xl);
   }
@@ -2932,6 +3083,7 @@ button.close {
   }
 
   #section-five {
+    display: block;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 3rem;
@@ -2957,7 +3109,6 @@ button.close {
   }
 
 }
-
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -3267,6 +3418,25 @@ button.close {
 
 
 @media (min-width: 768px) and (max-width: 1022px) {
+  .section-two-cta-row {
+    width: min(100%, 34rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+  }
+
+  .section-two-cta-row .button-section-two {
+    width: 100%;
+    margin: 0;
+    padding: 0.9rem 1rem;
+    gap: 0.9rem;
+    font-size: clamp(0.82rem, 1.55vw, 0.95rem);
+  }
+
+  .section-two-cta-row .button-section-two span {
+    text-align: center;
+  }
+
   #about-cards-container {
     width: 64%;
     margin: 0 auto;
@@ -3468,8 +3638,8 @@ button.close {
     justify-self: center;
   }
 
-  #about-cards-container .portfolio-card > :nth-last-child(2) {
-    margin-bottom: auto;
+  #about-cards-container .about-card-copy {
+    margin-bottom: 1.25rem;
   }
 
   .portfolio-card h4 {
@@ -3501,7 +3671,7 @@ button.close {
   }
 
   #about-cards-container .portfolio-card .button-section-four {
-    margin-top: 1rem;
+    margin-top: auto;
     margin-bottom: 0;
   }
 

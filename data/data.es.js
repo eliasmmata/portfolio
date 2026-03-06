@@ -29,12 +29,12 @@ export const uiContent = {
   },
   hero: {
     name: "Elías Moreno Mata",
-    oldText: "Venimos en son de paz",
-    newText: "Nos vamos en son de paz",
+    oldText: "We come in peace",
+    newText: "We go in peace",
     descriptionHtml:
-      '<span class="color-change text-bold">Full Stack Developer</span>, con más de cinco años de experiencia en proyectos de equipo e independientes. <span class="whoami-specialized">Especializado en Node.js y Next.js</span>. A veces también diseño webs : ). <span class="whoami-detail"><span class="whoami-specialized">Apasionado por programar, construir y explorar</span> nuevas tecnologías como la IA sin olvidar dónde empezó todo.</span>',
+      '<span class="color-change text-bold">Full Stack Developer</span>, con más de cinco años de experiencia en proyectos de equipo e independientes. <span class="whoami-specialized">Especializado en Node.js y Next.js</span>, a veces también diseño webs : ). <span class="whoami-detail"><span class="whoami-specialized">Apasionado de la programación, exploro</span> nuevas tecnologías como la IA sin olvidar dónde empezó todo.</span>',
     watchMeHtml:
-      "Mírame en tu portátil para vivir la experiencia completa de <span>hover</span>!",
+      "Ábreme en tu portátil para vivir la experiencia completa de <span>hover</span>!",
   },
   sectionTwo: {
     titleHtml:
@@ -46,23 +46,27 @@ export const uiContent = {
     lastProjectsTitle: "Últimos proyectos Full Stack",
     lastProjectsSubtitle: "#NextJs #React #MySql #NodeJs #ReactNative",
     wordpressTitle: "Trabajos WordPress",
-    wordpressSubtitle: "¿Has probado a apagarlo y encenderlo?",
+    wordpressSubtitle: "Did you try turning off and on again?",
     aboutTitle: "Sobre mí",
     aboutSubtitle:
-      "Nacido en los 80, criado en los 90 y viviendo a tope el siglo XXI",
+      "Born in the 80s, raised in the 90s, living 21st Century full",
     stackTitle: "Stack actual",
-    stackSubtitle: "Bailando electro-pop como un robot de 1984",
-    contactTitle: "¿Me quieres? Puedes tenerme",
-    contactSubtitle: "Excepto para ayudarte con la furgoneta de mudanza",
+    stackSubtitle: "Dancing to electro-pop like a robot from 1984",
+    contactTitle: "Contacta conmigo",
+    contactSubtitle: "Excepto si me necesitas para ayudarte con la mudanza",
+  },
+  projectsCarousel: {
+    previous: "Proyecto anterior",
+    next: "Proyecto siguiente",
   },
   form: {
     legendHtml:
-      'Datos a salvo de Space Invaders <span class="legend-mobile-hide">y de señores feudales digitales </span>:',
-    nameLabel: "Di tu nombre ♪ , di tu nombreee ♪ :",
-    namePlaceholder: "Ser Duncan el Alto",
-    emailLabel: "¿Digo qué? Digo email:",
+      'Datos a salvo de Space Invaders <span class="legend-mobile-hide">y tecnofeudalistas </span>:',
+    nameLabel: "Di mi nooombreeeee ♪ :",
+    namePlaceholder: "Ser Duncan the Tall",
+    emailLabel: "Correo electrónico:",
     emailPlaceholder: "madre_de_dragones@dracarys.dev",
-    messageLabel: "Cuéntame más, cuéntame más:",
+    messageLabel: "Cuéntame más:",
     messagePlaceholder:
       "No seas tímido, mi tesssoro...\nTambién puedes hablar conmigo pulsando el fantasma del footer : )",
     privacyTitle: "* Privacidad",
@@ -100,24 +104,24 @@ export const uiContent = {
 export const fullStackProjects = [
   {
     id: "fedesaproject",
-    title: "Negocio de clínica",
+    title: "Tienda accesorios clínica",
     description: "NextJs",
     url: "https://fedesa2-szzy.vercel.app",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "velezleaksproject",
     title: "Periódico digital + CMS",
     description: "NextJs, NodeJs, Strapi",
     url: "https://www.velezleaks.org",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "pitayafenicia",
-    title: "Tienda de frutas",
+    title: "Negocio frutas online",
     description: "NextJs, Google Analytics",
     url: "https://pitayafenicia.es",
-    buttonText: "Ir a la web",
+    buttonText: "Ver más",
   },
   {
     id: "appproject",
@@ -135,7 +139,7 @@ export const fullStackProjects = [
   },
   {
     id: "filterstore",
-    title: "Concepto de tienda de filtros",
+    title: "Concepto de filtro para tienda online",
     description: "NextJs, TypeScript",
     url: "https://filter-react-store23.netlify.app",
     buttonText: "Ir a la demo",
@@ -151,56 +155,56 @@ export const wordpressProjects = [
     title: "Phil Jackson Company",
     description: "Web corporativa digital",
     url: "https://philjackson.es/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "manuelburgos",
     title: "Manuel Burgos",
     description: "Web de arquitectura",
     url: "https://manuelburgos.es/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "bang",
     title: "Bang Studio",
     description: "Tienda de zapatillas personalizadas",
     url: "https://bangstudio.es/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "vesania",
     title: "Vesania Moda",
     description: "Tienda de ropa para mujer",
     url: "https://vesaniamoda.es/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "ownstyle",
     title: "Ownstyle Banus",
     description: "Tienda urbana",
     url: "https://ownstylebanus.com/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "zarzaparrilla",
     title: "Zarzaparrilla Saloon",
     description: "Blog del oeste",
     url: "https://www.oestevaquero.com/zarzaparrilla-saloon/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "lacueva",
     title: "Gastrobar La Cueva",
     description: "Restaurante",
     url: "https://www.gastrobarlacueva.com/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "oestevaquero",
     title: "Oeste Vaquero",
     description: "Web nicho de Amazon",
     url: "https://www.oestevaquero.com/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
 ];
 
@@ -211,7 +215,7 @@ export const stack = [
   {
     title: "JS, TypeScript y PHP",
     description: [
-      "He trabajado a diario durante más de cinco años con esos lenguajes, ahora intentando conectar a nivel senior con flujos de IA e implicándome más en la visión global.",
+      "He trabajado a diario durante más de cinco años con estos lenguajes, ahora intentando conectar a nivel senior con flujos de IA e implicándome más en la visión global.",
       "Abierto a trabajar con ambos lenguajes y con ganas de seguir aprendiendo después de ellos.",
     ],
     buttonText: "Ver más",
@@ -273,14 +277,14 @@ export const juniorProjects = [
     title: "Demo de diseño Slides",
     description: "React y Ownl Carousel",
     url: "http://carousel-owl-react.herokuapp.com/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "weteachfrontend",
     title: "We Teach Frontend",
     description: "NextJS, Tailwind, MongoDB",
     url: "https://weteachfrontend.com/",
-    buttonText: "Ir a la página",
+    buttonText: "Ver más",
   },
   {
     id: "cardsproject",
@@ -299,7 +303,7 @@ export const aboutMeCards = [
     title: "Málaga, Londres, Barcelona, Madrid.",
     description: [
       "No conoces un lugar hasta que vives en él. Trabajar en estas grandes ciudades me abrió la mente a otro nivel.",
-      "Después de volver a casa un tiempo, empiezo una segunda etapa en mi querida Madrid.",
+      "Después de volver a casa por un tiempo, empiezo una segunda etapa en mi querida Madrid.",
     ],
     buttonText: "Ir a Instagram",
     buttonUrl: "https://www.instagram.com/eliasmmata/",
@@ -307,8 +311,8 @@ export const aboutMeCards = [
   {
     title: "De la universidad al autoaprendizaje.",
     description: [
-      "Si mi carrera de Pedagogía me enseñó algo, fue la importancia del aprendizaje continuo. Por eso nunca dejo de conocer y adoptar cosas nuevas en este maravilloso mundo de la programación y el diseño.",
-      "Soy una persona ecléctica, intentando conectar puntos como dijo aquella mente maravillosa. Ahora, por fin, puedo considerarme <span class='color-change text-bold'>Full Stack Developer.</span>",
+      "Si la carrera de Pedagogía me enseñó algo, fue la importancia del aprendizaje continuo. Por eso nunca dejo de conocer y adoptar cosas nuevas en este maravilloso mundo de la programación y el diseño.",
+      "Soy una persona ecléctica, intentando conectar los puntos como dijo aquella mente maravillosa. Ahora, por fin, puedo considerarme <span class='color-change text-bold'>Full Stack Developer.</span>",
     ],
     buttonText: "Ir a Linkedin",
     buttonUrl: "https://www.linkedin.com/in/pabloeliasmorenomata/",
@@ -361,7 +365,7 @@ export const currentStack = [
   {
     src: "../images/logos/docker-logo.png",
     alt: "Logo de Docker",
-    imgClass: "tech-logo-docker",
+    imgClass: "tech-logo",
   },
   {
     src: "../images/logos/git-logo.png",
@@ -376,7 +380,7 @@ export const currentStack = [
   {
     src: "../images/logos/css-logo.png",
     alt: "Logo de CSS",
-    imgClass: "tech-logo-css",
+    imgClass: "tech-logo",
   },
   {
     src: "../images/logos/tailwind-logo.png",
@@ -386,6 +390,6 @@ export const currentStack = [
   {
     src: "../images/logos/pm2-logo.png",
     alt: "Logo de PM2",
-    imgClass: "tech-logo-pm2",
+    imgClass: "tech-logo",
   },
 ];

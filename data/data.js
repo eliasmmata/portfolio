@@ -55,6 +55,10 @@ export const uiContent = {
     contactTitle: "Want me? You could have me",
     contactSubtitle: "Except to help you with the moving van",
   },
+  projectsCarousel: {
+    previous: "Previous project",
+    next: "Next project",
+  },
   form: {
     legendHtml:
       'Data safe from Space Invaders <span class="legend-mobile-hide">and digital feudal lords </span>:',
@@ -361,7 +365,7 @@ export const currentStack = [
   {
     src: "../images/logos/docker-logo.png",
     alt: "Docker Logo",
-    imgClass: "tech-logo-docker",
+    imgClass: "tech-logo",
   },
   {
     src: "../images/logos/git-logo.png",
@@ -376,7 +380,7 @@ export const currentStack = [
   {
     src: "../images/logos/css-logo.png",
     alt: "CSS Logo",
-    imgClass: "tech-logo-css",
+    imgClass: "tech-logo",
   },
   {
     src: "../images/logos/tailwind-logo.png",
@@ -386,6 +390,6 @@ export const currentStack = [
   {
     src: "../images/logos/pm2-logo.png",
     alt: "PM2 Logo",
-    imgClass: "tech-logo-pm2",
+    imgClass: "tech-logo",
   },
 ];
