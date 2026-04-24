@@ -20,6 +20,10 @@ import {
 const JOYSTICK_ICON_PATH = "../assets/svgs/joystick.svg";
 const LANGUAGE_STORAGE_KEY = "portfolio-language";
 const DEFAULT_LANGUAGE = "en";
+const CV_FILE_BY_LANGUAGE = {
+  en: "../assets/cv/cv_26_en.pdf",
+  es: "../assets/cv/cv_26_es.pdf",
+};
 
 const localizedContent = {
   en: {
@@ -108,6 +112,16 @@ function setElementAttribute(id, attribute, value) {
   }
 }
 
+function getCvFilePath(language = DEFAULT_LANGUAGE) {
+  return CV_FILE_BY_LANGUAGE[language] ?? CV_FILE_BY_LANGUAGE[DEFAULT_LANGUAGE];
+}
+
+function updateCvLinks(language) {
+  const cvFilePath = getCvFilePath(language);
+  setElementAttribute("nav-cv-link", "href", cvFilePath);
+  setElementAttribute("section-two-cv-button", "data-cv-href", cvFilePath);
+}
+
 function updateLanguageButtons(language) {
   document.querySelectorAll(".lang-button").forEach((button) => {
     const isActive = button.dataset.language === language;
@@ -121,6 +135,7 @@ function applyStaticContent(content, isMenuOpen = false) {
 
   document.documentElement.lang = ui.htmlLang;
   document.title = ui.metaTitle;
+  updateCvLinks(ui.locale);
 
   setElementAttribute(
     "menu-toggle",
@@ -445,6 +460,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const mobileMenu = document.getElementById("main-menu");
   const googlePlusLink = document.getElementById("nav-googleplus-link");
   const googlePlusModal = document.getElementById("googleplus-joke-modal");
+  const sectionTwoCvButton = document.getElementById("section-two-cv-button");
 
   let isMenuOpen = false;
   const setGooglePlusModalState = (isOpen) => {
@@ -510,6 +526,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       control.addEventListener("click", function () {
         setGooglePlusModalState(false);
       });
+    });
+  }
+
+  if (sectionTwoCvButton) {
+    sectionTwoCvButton.addEventListener("click", function () {
+      const cvHref =
+        sectionTwoCvButton.dataset.cvHref ?? getCvFilePath(currentData.ui.locale);
+      window.open(cvHref, "_blank", "noopener");
     });
   }
 
